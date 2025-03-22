@@ -1,0 +1,19 @@
+// Font mixins
+
+@mixin reed-headline {
+  font-family: reed-headline, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin clash-display-medium {
+  font-family: 'ClashDisplay-Medium', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin clash-display-regular {
+  font-family: 'ClashDisplay-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
