@@ -1,32 +1,79 @@
 [
   {
+    "id": "mooders",
+    "name": "MOODERS",
+    "image": "/images/w1/mooders.png",
+    "url": "https://mooders.net/",
+    "week": "W-1"
+  },
+  {
+    "id": "studiofaculty",
+    "name": "STUDIO FACULTY",
+    "image": "/images/w1/studiofaculty.png",
+    "url": "https://www.studiofaculty.com/",
+    "week": "W-1"
+  },
+  {
+    "id": "sarrahbassett",
+    "name": "SARAH BASSETT",
+    "image": "/images/w1/sarrahbassett.png",
+    "url": "https://www.sarah-bassett.com/",
+    "week": "W-1"
+  },
+  {
+    "id": "newkid",
+    "name": "NEW KID",
+    "image": "/images/w1/newkid.png",
+    "url": "https://newkid.services/",
+    "week": "W-1"
+  },
+  {
+    "id": "works",
+    "name": "WORKS",
+    "image": "/images/w1/works.png",
+    "url": "https://works.studio/",
+    "week": "W-1"
+  },
+  {
+    "id": "mgabrilo",
+    "name": "M GABRILO",
+    "image": "/images/w1/mgrabrilo.png",
+    "url": "https://mgabrilo.work/",
+    "week": "W-1"
+  },
+  {
     "id": "bureaucool",
     "name": "BUREAU COOL",
-    "image": "/images/bureaucool.png",
-    "url": "https://bureau.cool/"
+    "image": "/images/w2/bureaucool.png",
+    "url": "https://bureau.cool/",
+    "week": "W-2"
   },
   {
     "id": "hki",
     "name": "HKI PARIS",
-    "image": "/images/hki.png",
-    "url": "https://hki.paris/en/"
+    "image": "/images/w2/hki.png",
+    "url": "https://hki.paris/en/",
+    "week": "W-2"
   },
   {
     "id": "postpost",
     "name": "POST POST",
-    "image": "/images/postpost.png",
-    "url": "https://postpost.studio/"
+    "image": "/images/w2/postpost.png",
+    "url": "https://postpost.studio/",
+    "week": "W-2"
   },
   {
     "id": "ratio",
     "name": "RATIO",
-    "image": "/images/ratio.png",
-    "url": "https://www.ratioetmotus.com/"
+    "image": "/images/w2/ratio.png",
+    "url": "https://www.ratioetmotus.com/",
+    "week": "W-2"
   },
   {
     "id": "philipppolder",
     "name": "PHILIPP POLDER",
-    "image": "/images/philipppolder.png",
-    "url": "https://philipppolder.com/"
+    "image": "/images/w2/philipppolder.png",
+    "url": "https://philipppolder.com/",
+    "week": "W-2"
   }
 ]

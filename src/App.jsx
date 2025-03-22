@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
 import HeaderCenter from './components/HeaderCenter'
-import Description from './components/Description'
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Scroll html>
             <div className="app">
               <HeaderCenter />
-              <Description />
               <Projects />
             </div>
           </Scroll>
