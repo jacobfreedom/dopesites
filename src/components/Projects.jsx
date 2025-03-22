@@ -2,7 +2,7 @@ import React from 'react'
 import projects from '../assets/data/projects.json'
 
 export default function Projects() {
-  const weeks = ['W-1', 'W-2'];
+  const weeks = [...new Set(projects.map(project => project.week))].sort();
 
   return (
     <>
@@ -12,7 +12,7 @@ export default function Projects() {
           <React.Fragment key={week}>
             <div className="intro">
               <p className="intro-left">WEEKLY DROPS</p>
-              <p className="intro-week">{week}</p>
+              <p className="intro-week">W-{week + 1}</p>
               <p className="intro-right">FREE TIME INITIATIVE</p>
             </div>
 
