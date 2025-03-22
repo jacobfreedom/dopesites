@@ -6,40 +6,31 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className="header__item">SELECTION</div>
-        <div className="header__item">OF</div>
-        <div className="header__logo">dopesites</div>
-        <div className="header__item">BY</div>
-        <div className="header__item">JAKUB SVOBODA</div>
+        <div className='header-left'>
+          <div className="header-item">SELECTION</div>
+          <div className="header-item">OF</div>
+        </div>
+        <div className="header-logo">dopesites</div>
+        <div className="header-right">
+          <div className="header-item">BY</div>
+          <a className="header-item">JAKUB SVOBODA</a>
+        </div>
       </header>
 
-      <div className="site-frame">
-        <div className="site-frame__label site-frame__label--left">WEEKLY DROPS</div>
-        <div className="site-frame__label site-frame__label--center">W-1</div>
-        <div className="site-frame__label site-frame__label--right">FREE TIME INITIATIVE</div>
+      <div className="center">
+        <a className="center-left">IG</a>
+        <p className="center-paragraph">
+          THE ONES WHICH MAKE <br/>
+          THE INTERNET A NICER PLACE <br/>
+          TO BE IN
+        </p>
+        <a className="center-right">LI</a>
       </div>
 
       <div className="description">
-        <div className="description__line">01</div>
-        <div className="description__line">THE LIVING ONES TO MAKE</div>
-        <div className="description__line">THE INTERNET A BETTER PLACE</div>
-        <div className="description__line">TO BE IN.</div>
-      </div>
-
-      <div className="projects">
-        {projects.map((project) => (
-          <a
-            key={project.id}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project"
-          >
-            <div className="project__frame">
-              <img src={project.image} alt={project.name} className="project__image" />
-            </div>
-          </a>
-        ))}
+        <p className="description__line">WEEKLY DROPS</p>
+        <p className="description__line">W-1</p>
+        <p className="description__line">FREE TIME INITIATIVE</p>
       </div>
     </div>
   )

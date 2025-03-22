@@ -1,6 +1,5 @@
 // Colors
 $color-bg-primary: #181418;
-$color-bg-secondary: rgba(24, 20, 24, 0.5);
 $color-text: #E3D7CC;
 $color-accent: #8CA8B4;
 
@@ -13,9 +12,11 @@ $spacing-xl: 127px;
 
 
 // Typography
-$font-size-sm: 0.875rem;
-$font-size-lg: 1.5rem;
-$font-size-xxl: 2rem;
+$font-size-xsm: 12px;
+$font-size-sm: 13px;
+$font-size-md: 15px;
+$font-size-header: 20px;
+$font-size-logo: 128px;
 
 // Grid
 $grid-gap: 1rem;
