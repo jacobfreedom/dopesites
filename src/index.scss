@@ -1,12 +1,13 @@
 @use './assets/styles/index' as *;
 @use './assets/fonts/fonts' as *;
+@use './assets/styles/_variables' as *; // Import the variables
 
 :root {
   @include clash-display-regular;
   line-height: 100%;
 
-  color: #E3D7CC;
-  background-color: #181418;
+  color: $color-text;
+  background-color: $color-bg-primary;
 
   font-synthesis: none;
   text-rendering: optimizeSpeed;
