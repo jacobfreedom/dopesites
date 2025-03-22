@@ -2,25 +2,25 @@
   {
     "id": "bureaucool",
     "name": "BUREAU COOL",
-    "image": "/src/assets/images/bureaucool.png",
+    "image": "@/assets/images/bureaucool.png",
     "url": "https://bureau.cool/"
   },
   {
     "id": "hki",
     "name": "HKI PARIS",
-    "image": "/src/assets/images/hki.png",
+    "image": "@/assets/images/hki.png",
     "url": "https://hki.paris/en/"
   },
   {
     "id": "postpost",
     "name": "POST POST",
-    "image": "/src/assets/images/postpost.png",
+    "image": "@/assets/images/postpost.png",
     "url": "https://postpost.studio/"
   },
   {
     "id": "ratio",
     "name": "RATIO",
-    "image": "/src/assets/images/ratio.png",
+    "image": "@/assets/images/ratio.png",
     "url": "https://www.ratioetmotus.com/"
   }
 ]
