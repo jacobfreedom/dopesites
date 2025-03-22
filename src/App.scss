@@ -1,2 +1,108 @@
-@import './assets/styles/mixins';
-@import './assets/styles/variables';
+@use './assets/styles/index' as *;
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  background-color: $color-bg-primary;
+  color: $color-text;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+
+  &__item {
+    @include clash-display-regular;
+    font-size: $font-size-sm;
+    letter-spacing: 0.05em;
+  }
+
+  &__logo {
+    @include reed-headline;
+    font-size: $font-size-xxl;
+    color: #8EACC4;
+  }
+}
+
+.site-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__label {
+    @include clash-display-regular;
+    font-size: $font-size-sm;
+    position: absolute;
+    letter-spacing: 0.05em;
+
+    &--left {
+      left: 0;
+      top: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: left top;
+    }
+
+    &--center {
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    &--right {
+      right: 0;
+      top: 50%;
+      transform: rotate(90deg) translateX(50%);
+      transform-origin: right top;
+    }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin: $spacing-lg 0;
+
+  &__line {
+    @include clash-display-regular;
+    font-size: $font-size-lg;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $grid-gap;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.project {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  
+  &__frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: $color-bg-secondary;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

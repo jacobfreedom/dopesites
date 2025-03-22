@@ -1,5 +1,5 @@
-@import './assets/styles/mixins';
-@import './assets/fonts/_fonts.scss';
+@use './assets/styles/index' as *;
+@use './assets/fonts/fonts' as *;
 
 :root {
   @include clash-display-regular;
