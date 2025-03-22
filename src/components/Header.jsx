@@ -10,7 +10,7 @@ export default function Header() {
       <div className="header-logo">dopesites</div>
       <div className="header-right">
         <div className="header-item">BY</div>
-        <a className="header-item">JAKUB SVOBODA</a>
+        <a href='#' className="header-item">JAKUB SVOBODA</a>
       </div>
     </header>
   )

@@ -22,5 +22,11 @@
     "name": "RATIO",
     "image": "/images/ratio.png",
     "url": "https://www.ratioetmotus.com/"
+  },
+  {
+    "id": "philipppolder",
+    "name": "PHILIPP POLDER",
+    "image": "/images/philipppolder.png",
+    "url": "https://philipppolder.com/"
   }
 ]
