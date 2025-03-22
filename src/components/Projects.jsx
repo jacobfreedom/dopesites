@@ -5,15 +5,17 @@ export default function Projects() {
   return (
     <div className="projects">
       {projects.map((project) => (
-        <a
-          key={project.id}
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="projects__item"
-        >
-          <img src={project.image} alt={project.name} />
-        </a>
+        <div className="projects__wrapper" key={project.id}>
+          <div className="projects__frame-label">SITE FRAME</div>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projects__item"
+          >
+            <img src={project.image} alt={project.name} />
+          </a>
+        </div>
       ))}
     </div>
   )
