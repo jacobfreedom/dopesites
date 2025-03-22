@@ -110,8 +110,9 @@
 
   &__frame-label {
     @include clash-display-regular;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    writing-mode: sideways-lr;
+    // transform: rotate(180deg);
+    text-align: end;
     font-size: $fs-12;
     color: $color-text;
   }

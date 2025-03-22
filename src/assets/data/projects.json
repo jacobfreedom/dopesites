@@ -1,79 +1,61 @@
 [
-  {
-    "id": 0,
-    "name": "MOODERS",
-    "image": "/images/w1/mooders.png",
-    "url": "https://mooders.net/",
-    "week": 0
-  },
-  {
-    "id": 0,
-    "name": "STUDIO FACULTY",
-    "image": "/images/w1/studiofaculty.png",
-    "url": "https://www.studiofaculty.com/",
-    "week": 0
-  },
-  {
-    "id": 0,
-    "name": "SARAH BASSETT",
-    "image": "/images/w1/sarrahbassett.png",
-    "url": "https://www.sarah-bassett.com/",
-    "week": 0
-  },
-  {
-    "id": 0,
-    "name": "NEW KID",
-    "image": "/images/w1/newkid.png",
-    "url": "https://newkid.services/",
-    "week": 0
-  },
-  {
-    "id": 0,
-    "name": "WORKS",
-    "image": "/images/w1/works.png",
-    "url": "https://works.studio/",
-    "week": 0
-  },
-  {
-    "id": 0,
-    "name": "M GABRILO",
-    "image": "/images/w1/mgrabrilo.png",
-    "url": "https://mgabrilo.work/",
-    "week": 0
-  },
-  {
-    "id": 1,
-    "name": "BUREAU COOL",
-    "image": "/images/w2/bureaucool.png",
-    "url": "https://bureau.cool/",
-    "week": 1
-  },
-  {
-    "id": 1,
-    "name": "HKI PARIS",
-    "image": "/images/w2/hki.png",
-    "url": "https://hki.paris/en/",
-    "week": 1
-  },
-  {
-    "id": 1,
-    "name": "POST POST",
-    "image": "/images/w2/postpost.png",
-    "url": "https://postpost.studio/",
-    "week": 1
-  },
-  {
-    "id": 1,
-    "name": "RATIO",
-    "image": "/images/w2/ratio.png",
-    "url": "https://www.ratioetmotus.com/",
-    "week": 1
-  },
-  {
-    "id": 1,
-    "name": "PHILIPP POLDER",
-    "image": "/images/w2/philipppolder.png",
-    "url": "https://philipppolder.com/",
-    "week": 1
-  }
+  [
+    {
+      "name": "MOODERS",
+      "image": "/images/w1/mooders.png",
+      "url": "https://mooders.net/"
+    },
+    {
+      "name": "STUDIO FACULTY",
+      "image": "/images/w1/studiofaculty.png",
+      "url": "https://www.studiofaculty.com/"
+    },
+    {
+      "name": "SARAH BASSETT",
+      "image": "/images/w1/sarrahbassett.png",
+      "url": "https://www.sarah-bassett.com/"
+    },
+    {
+      "name": "NEW KID",
+      "image": "/images/w1/newkid.png",
+      "url": "https://newkid.services/"
+    },
+    {
+      "name": "WORKS",
+      "image": "/images/w1/works.png",
+      "url": "https://works.studio/"
+    },
+    {
+      "name": "M GABRILO",
+      "image": "/images/w1/mgrabrilo.png",
+      "url": "https://mgabrilo.work/"
+    }
+  ],
+  [
+    {
+      "name": "BUREAU COOL",
+      "image": "/images/w2/bureaucool.png",
+      "url": "https://bureau.cool/"
+    },
+    {
+      "name": "HKI PARIS",
+      "image": "/images/w2/hki.png",
+      "url": "https://hki.paris/en/"
+    },
+    {
+      "name": "POST POST",
+      "image": "/images/w2/postpost.png",
+      "url": "https://postpost.studio/"
+    },
+    {
+      "name": "RATIO",
+      "image": "/images/w2/ratio.png",
+      "url": "https://www.ratioetmotus.com/"
+    },
+    {
+      "name": "PHILIPP POLDER",
+      "image": "/images/w2/philipppolder.png",
+      "url": "https://philipppolder.com/"
+    }
+  ]
 ]
