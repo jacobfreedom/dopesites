@@ -2,33 +2,25 @@
   {
     "id": "bureaucool",
     "name": "BUREAU COOL",
-    "description": "A BOUTIQUE DESIGN STUDIO AND DIGITAL PARTNER",
     "image": "/src/assets/images/bureaucool.png",
-    "url": "https://bureau.cool/",
-    "category": "SITE FRAME"
+    "url": "https://bureau.cool/"
   },
   {
     "id": "hki",
     "name": "HKI PARIS",
-    "description": "TELLING STORIES MAKING THE INTERNET A BETTER PLACE TO BE IN",
     "image": "/src/assets/images/hki.png",
-    "url": "https://hki.paris/en/",
-    "category": "SITE FRAME"
+    "url": "https://hki.paris/en/"
   },
   {
     "id": "postpost",
     "name": "POST POST",
-    "description": "WEEKLY DROPS",
     "image": "/src/assets/images/postpost.png",
-    "url": "https://postpost.studio/",
-    "category": "SITE FRAME"
+    "url": "https://postpost.studio/"
   },
   {
     "id": "ratio",
     "name": "RATIO",
-    "description": "FREE TIME INITIATIVE",
     "image": "/src/assets/images/ratio.png",
-    "url": "https://www.ratioetmotus.com/",
-    "category": "SITE FRAME"
+    "url": "https://www.ratioetmotus.com/"
   }
 ]
