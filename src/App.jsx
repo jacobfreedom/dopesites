@@ -3,8 +3,7 @@ import './App.scss'
 import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
-import Header from './components/Header'
-import Center from './components/Center'
+import HeaderCenter from './components/HeaderCenter'
 import Description from './components/Description'
 
 function App() {
@@ -16,8 +15,7 @@ function App() {
         <ScrollControls pages={3} damping={0.1} distance={1}>
           <Scroll html>
             <div className="app">
-              <Header />
-              <Center />
+              <HeaderCenter />
               <Description />
               <Projects />
             </div>
