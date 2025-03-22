@@ -13,6 +13,7 @@
   width: 100%;
   margin-top: $sp-95;
   padding: 0 calc(#{$sp-33 + $sp-42});
+  gap: $sp-268;
   
   &-left, &-right {
     display: flex;
@@ -41,6 +42,7 @@
   width: 100%;
   margin-top: $sp-127;
   gap: $sp-109;
+  line-height: 125%;
 
   &-left, &-right {
     @include clash-display-medium;
@@ -60,7 +62,6 @@
     color: $color-text;
     text-align: center;
     margin: 0;
-    line-height: 125%;
     letter-spacing: 0.03em;
   }
 }
@@ -72,27 +73,34 @@
   width: 100%;
   margin-top: $sp-120;
   padding: 0 $sp-42;
+  @include clash-display-medium;
+  line-height: 125%;
+
 
   &-week {
-    @include clash-display-regular;
-    font-size: $fs-12;
+    font-size: $fs-20;
     color: $color-text;
     margin: 0;
   }
 
   &-left, &-right {
-    @include clash-display-regular;
-    font-size: $fs-12;
+    display: flex;
+    font-size: $fs-13;
+    flex: 1;
     color: $color-text;
     margin: 0;
+    letter-spacing: 0.35em;
+  }
+  &-right {
+    justify-content: flex-end;
   }
 }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $sp-95;
-  padding: $sp-95 0;
+  gap: $sp-109;
+  padding: $sp-95 $sp-109;
 
   &__wrapper {
     position: relative;
