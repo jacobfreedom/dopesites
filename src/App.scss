@@ -11,7 +11,8 @@
   display: flex;
   align-items: flex-end;
   width: 100%;
-  margin-top: $spacing-95;
+  margin-top: $sp-95;
+  padding: 0 calc(#{$sp-33 + $sp-42});
   
   &-left, &-right {
     display: flex;
@@ -21,13 +22,13 @@
 
   &-item {
     @include clash-display-regular;
-    font-size: $font-size-20;
+    font-size: $fs-20;
     color: $color-text;
   }
 
   &-logo {
     @include reed-headline;
-    font-size: $font-size-logo;
+    font-size: $fs-logo;
     color: $color-accent;
     line-height: 39%;
   }
@@ -35,36 +36,53 @@
 
 .center {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: $spacing-127;
+  margin-top: $sp-127;
+  gap: $sp-109;
 
   &-left, &-right {
-    @include clash-display-regular;
-    font-size: $font-size-13;
+    @include clash-display-medium;
+    font-size: $fs-13;
     color: $color-text;
+    transform: rotate(90deg);
+    text-decoration: underline;
+  }
+
+  &-right {
+    transform: rotate(-90deg);
   }
 
   &-paragraph {
-    @include clash-display-medium;
-    font-size: $font-size-15;
+    @include clash-display-regular;
+    font-size: $fs-12;
     color: $color-text;
     text-align: center;
     margin: 0;
+    line-height: 125%;
+    letter-spacing: 0.03em;
   }
 }
 
-.description {
+.intro {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  margin-top: $spacing-120;
+  margin-top: $sp-120;
+  padding: 0 $sp-42;
 
-  &__line {
+  &-week {
     @include clash-display-regular;
-    font-size: $font-size-12;
+    font-size: $fs-12;
+    color: $color-text;
+    margin: 0;
+  }
+
+  &-left, &-right {
+    @include clash-display-regular;
+    font-size: $fs-12;
     color: $color-text;
     margin: 0;
   }
@@ -73,22 +91,22 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-95;
-  padding: $spacing-95 0;
+  gap: $sp-95;
+  padding: $sp-95 0;
 
   &__wrapper {
     position: relative;
     display: flex;
-    gap: $spacing-33;
+    gap: $sp-33;
   }
 
   &__frame-label {
     @include clash-display-regular;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: $font-size-12;
+    font-size: $fs-12;
     color: $color-text;
-    margin-bottom: $spacing-33;
+    margin-bottom: $sp-33;
   }
 
   &__item {
