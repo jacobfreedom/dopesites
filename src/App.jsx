@@ -1,43 +1,33 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './App.scss'
-import Scene from './components/Canvas'
+import { Canvas } from '@react-three/fiber'
+import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
+import Header from './components/Header'
+import Center from './components/Center'
+import Description from './components/Description'
 
 function App() {
   return (
-    <Scene>
-      <div className="app">
-        <header className="header">
-          <div className='header-left'>
-            <div className="header-item">SELECTION</div>
-            <div className="header-item">OF</div>
-          </div>
-          <div className="header-logo">dopesites</div>
-          <div className="header-right">
-            <div className="header-item">BY</div>
-            <a className="header-item">JAKUB SVOBODA</a>
-          </div>
-        </header>
-
-        <div className="center">
-          <a className="center-left">IG</a>
-          <p className="center-paragraph">
-            THE ONES WHICH MAKE <br/>
-            THE INTERNET A NICER PLACE <br/>
-            TO BE IN
-          </p>
-          <a className="center-right">LI</a>
-        </div>
-
-        <div className="description">
-          <p className="description__line">WEEKLY DROPS</p>
-          <p className="description__line">W-1</p>
-          <p className="description__line">FREE TIME INITIATIVE</p>
-        </div>
-
-        <Projects />
-      </div>
-    </Scene>
+    <Canvas
+      style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}
+      camera={{ position: [0, 0, 5], fov: 50 }}
+      frameloop="demand"
+    >
+      <color attach="background" args={['#181418']} />
+      <Suspense fallback={null}>
+        <ScrollControls pages={3} damping={0.1} distance={1}>
+          <Scroll html>
+            <div className="app">
+              <Header />
+              <Center />
+              <Description />
+              <Projects />
+            </div>
+          </Scroll>
+        </ScrollControls>
+      </Suspense>
+    </Canvas>
   )
 }
 
