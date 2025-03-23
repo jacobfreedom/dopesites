@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 const LazyImage = ({ src, alt, className }) => {
+  // Return null if src is empty to prevent browser from downloading the whole page
+  if (!src) {
+    return null;
+  }
   const [isLoaded, setIsLoaded] = useState(false);
-  const [imgSrc, setImgSrc] = useState('');
-  const placeholderSrc = src.replace(/\.(png|webp)$/, '-placeholder.webp');
+  const [imgSrc, setImgSrc] = useState(src); // Initialize with src instead of empty string
+  const placeholderSrc = src ? src.replace(/\.(png|webp)$/, '-placeholder.webp') : null;
   
   // Use the original src as fallback if the webp version fails
-  const originalSrc = src.includes('.webp') ? src.replace(/\.webp$/, '.png') : src;
+  const originalSrc = src && src.includes('.webp') ? src.replace(/\.webp$/, '.png') : src;
 
   useEffect(() => {
     // Reset state when src changes

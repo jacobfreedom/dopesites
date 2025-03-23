@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import projects from '../assets/data/projects.json'
+import LazyImage from './LazyImage'
 
 export default function Projects() {
   return (
@@ -22,12 +23,9 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="projects__item"
                 >
-                  <img 
+                  <LazyImage 
                     src={project.image.replace(/\.png$/, '.webp')} 
                     alt={project.name}
-                    onError={(e) => {
-                      e.target.src = project.image;
-                    }}
                   />
                 </a>
               </div>
