@@ -6,7 +6,7 @@ const LazyImage = ({ src, alt, className }) => {
     return null;
   }
   const [isLoaded, setIsLoaded] = useState(false);
-  const [imgSrc, setImgSrc] = useState(src); // Initialize with src instead of empty string
+  const [imgSrc, setImgSrc] = useState(src);
   const placeholderSrc = src ? src.replace(/\.(png|webp)$/, '-placeholder.webp') : null;
   
   // Use the original src as fallback if the webp version fails
@@ -19,7 +19,10 @@ const LazyImage = ({ src, alt, className }) => {
   }, [src]);
 
   const handleLoad = () => {
-    setIsLoaded(true);
+    // Add a small delay to ensure smooth transition
+    requestAnimationFrame(() => {
+      setIsLoaded(true);
+    });
   };
 
   const handleError = () => {
@@ -32,15 +35,17 @@ const LazyImage = ({ src, alt, className }) => {
   return (
     <div className={`lazy-image-container ${className || ''}`}>
       {/* Placeholder image (blurred version) */}
-      <img 
-        src={placeholderSrc} 
-        alt={alt}
-        className={`lazy-image-placeholder ${isLoaded ? 'lazy-image-hidden' : ''}`}
-        onError={(e) => {
-          // If placeholder fails, make it transparent
-          e.target.style.display = 'none';
-        }}
-      />
+      {placeholderSrc && (
+        <img 
+          src={placeholderSrc} 
+          alt={alt}
+          className={`lazy-image-placeholder ${isLoaded ? 'lazy-image-hidden' : ''}`}
+          onError={(e) => {
+            // If placeholder fails, make it transparent
+            e.target.style.display = 'none';
+          }}
+        />
+      )}
       {/* Main image */}
       <img
         src={imgSrc}
