@@ -251,3 +251,24 @@
   --sp-firstgrid: #{$sp-y-95};
   --sp-nextgrids: #{$sp-y-127};
 }
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-text;
+
+  &-link {
+    font-size: $fs-20;
+    color: $color-text;
+    text-decoration: underline;
+    line-height: 125%;
+    letter-spacing: 0.03em;
+  }
+
+  &-paragraph {
+    font-size: $fs-15;
+  }
+}

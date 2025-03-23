@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   const [pages, setPages] = useState(3);
@@ -65,6 +66,7 @@ function App() {
             <div className="app">
               <Header />
               <Projects />
+              <Footer />
             </div>
           </Scroll>
         </ScrollControls>
