@@ -12,13 +12,28 @@
   align-items: flex-end;
   width: 100%;
   margin-top: $sp-y-95;
-  padding: 0 calc($sp-x-33 + $sp-x-42); // Remove interpolation
+  padding: 0 calc($sp-x-33 + $sp-x-42);
   gap: $sp-x-268;
+
+  @media (max-width: 880px) {
+    gap: 0; // Set gap to 0 at 880px
+  }
   
   &-left, &-right {
     display: flex;
     flex: 1;
     justify-content: space-between;
+    @media (max-width: 1090px) {
+      flex-direction: column;
+      gap: $sp-y-7;
+    }
+  }
+
+  &-right {
+    @media (max-width: 1090px) {
+      align-items: flex-end;
+      text-align: end;
+    }
   }
 
   &-item {
@@ -46,7 +61,7 @@
 
   &-left, &-right {
     @include clash-display-medium;
-    font-size: $fs-13;
+    font-size: $fs-15;
     color: $color-text;
     transform: rotate(90deg);
     text-decoration: underline;
@@ -63,6 +78,7 @@
     text-align: center;
     margin: 0;
     letter-spacing: 0.03em;
+    line-height: 125%;
   }
 }
 
@@ -71,7 +87,7 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  margin-top: $sp-y-120; // Converted to vertical spacing
+  margin-top: $sp-y-120;
   padding: 0 $sp-x-42;
   @include clash-display-medium;
   line-height: 125%;
@@ -104,8 +120,16 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $sp-x-109;
+  gap: $sp-y-95 $sp-x-42;
   padding: $sp-y-95 $sp-x-109;
+
+  @media (max-width: 1330px) {
+    grid-template-columns: repeat(2, 1fr); // Change to 2 columns at 1330px
+  }
+
+  @media (max-width: 680px) {
+    grid-template-columns: repeat(1, 1fr); // Change to 1 column at 680px
+  }
 
   &-wrapper {
     position: relative;
@@ -114,13 +138,15 @@
   }
 
   &-label {
-    @include clash-display-regular;
+    @include clash-display-medium;
     writing-mode: sideways-lr;
     text-align: end;
-    font-size: $fs-12;
+    font-size: $fs-14;
+    letter-spacing: 0.03em;
     color: $color-text;
     display: flex;
     flex-direction: column;
+    pointer-events: none;
 
     .projects-label-line {
       width: 1px;
@@ -144,7 +170,6 @@
   }
 }
 
-// Lazy image loading styles
 .lazy-image {
   &-container {
     position: relative;
