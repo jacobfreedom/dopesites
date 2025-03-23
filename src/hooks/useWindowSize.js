@@ -5,7 +5,6 @@ export function useWindowSize() {
     width: window.innerWidth,
   });
 
-  // Debounce function to limit the frequency of updates
   const debounce = (func, wait) => {
     let timeout;
     return function executedFunction(...args) {
@@ -18,10 +17,8 @@ export function useWindowSize() {
     };
   };
 
-  // Memoize the resize handler with useCallback
   const handleResize = useCallback(
     debounce(() => {
-      // Only update if the width has actually changed
       if (window.innerWidth !== windowSize.width) {
         setWindowSize({
           width: window.innerWidth,
@@ -32,7 +29,6 @@ export function useWindowSize() {
   );
 
   useEffect(() => {
-    // Use passive event listener for better performance
     window.addEventListener('resize', handleResize, { passive: true });
     return () => window.removeEventListener('resize', handleResize);
   }, [handleResize]);
