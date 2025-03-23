@@ -34,6 +34,19 @@
       align-items: flex-end;
       text-align: end;
     }
+    .header-item:last-child {
+      @include clash-display-medium; // Apply mixin to the last child
+
+      @media (max-width: 680px) {
+        @include clash-display-medium; // Apply mixin at 680px
+      }
+    }
+
+    @media (max-width: 680px) {
+      .header-item {
+        @include clash-display-medium; // Apply mixin to all children at 680px
+      }
+    }
   }
 
   &-item {
