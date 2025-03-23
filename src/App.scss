@@ -25,7 +25,7 @@
     justify-content: space-between;
     @media (max-width: 1090px) {
       flex-direction: column;
-      gap: $sp-y-7;
+      // gap: $sp-y-7;
     }
   }
 
@@ -89,12 +89,16 @@
 
   &-paragraph {
     @include clash-display-regular;
-    font-size: $fs-12;
+    font-size: $fs-13;
     color: $color-text;
     text-align: center;
     margin: 0;
     letter-spacing: 0.03em;
     line-height: 125%;
+
+    @media (max-height: 890px) {
+      font-size: $fs-14; // Adjust font size at 980px height
+    }
   }
 }
 
