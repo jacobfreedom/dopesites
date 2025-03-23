@@ -19,9 +19,9 @@ $sp-y-120: calc(120 / 1117 * 100vh);
 $sp-y-127: calc(127 / 1117 * 100vh);
 $sp-y-268: calc(268 / 1117 * 100vh);
 
-// Typography (remains unchanged)
-$fs-12: 12px;
-$fs-13: 13px;
-$fs-15: 15px;
-$fs-20: 20px;
-$fs-logo: 128px;
+// Typography (converted to fluid units)
+$fs-12: calc(12 / 1728 * 100vw);
+$fs-13: calc(13 / 1728 * 100vw);
+$fs-15: calc(15 / 1728 * 100vw);
+$fs-20: calc(20 / 1728 * 100vw);
+$fs-logo: calc(128 / 1728 * 100vw);
