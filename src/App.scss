@@ -272,6 +272,7 @@
 
   &-paragraph {
     font-size: $fs-20;
+    @include clash-display-medium;
 
     @media (max-width: 765px) {
       font-size: $fs-15;
