@@ -34,6 +34,23 @@
       align-items: flex-end;
       text-align: end;
     }
+
+    @media (max-width: 576px) {
+      .header-item:nth-child(1) {
+        display: none; // Hide the first header item at 576px
+      }
+    }
+
+    .header-item:nth-child(2) {
+      // text-decoration: underline;
+    }
+
+    @media (max-width: 576px) {
+      .header-item:nth-child(2)::after {
+        content: '\A'; // Insert a line break at 576px
+        white-space: pre; // Preserve the line break
+      }
+    }
   }
 
   &-item {
