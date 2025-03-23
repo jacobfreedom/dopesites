@@ -35,7 +35,7 @@
       text-align: end;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 765px) {
       .header-item:nth-child(1) {
         display: none; // Hide the first header item at 576px
       }
@@ -45,10 +45,11 @@
       // text-decoration: underline;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 765px) {
       .header-item:nth-child(2)::after {
-        content: '\A'; // Insert a line break at 576px
-        white-space: pre; // Preserve the line break
+        content: '\A'; 
+        white-space: pre; // Ensure pre-wrap to handle line breaks
+        display: block; // Ensure the line break is visible
       }
     }
   }
