@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     calculatePages();
     
-    const timeoutId = setTimeout(calculatePages, 200);
+    const timeoutId = setTimeout(calculatePages, 20);
 
     window.addEventListener('resize', calculatePages, { passive: true });
 
