@@ -1,16 +1,18 @@
 import React from 'react'
 import projects from '../assets/data/projects.json'
 import LazyImage from './LazyImage'
+import { useWindowSize } from '../hooks/useWindowSize'
 
 export default function Projects() {
+  const { width } = useWindowSize();
   return (
     <>
       {projects.map((weekProjects, weekIndex) => (
         <React.Fragment key={weekIndex}>
           <div className="intro">
-            {weekIndex === 0 && <p className="intro-left">WEEKLY DROPS</p>}
+            {weekIndex === 0 && <p className="intro-left">{width <= 930 ? <>WEEKLY <br/>DROPS</> : 'WEEKLY DROPS'}</p>}
             <p className="intro-week">W-{projects.length - 1 - weekIndex}</p>
-            {weekIndex === 0 && <p className="intro-right">FREE TIME INITIATIVE</p>}
+            {weekIndex === 0 && <p className="intro-right">{width <= 930 ? <>FREE TIME <br/>INITIATIVE</> : 'FREE TIME INITIATIVE'}</p>}
           </div>
 
           <div className="projects" style={{ paddingTop: weekIndex === 0 ? 'var(--sp-firstgrid)' : 'var(--sp-nextgrids)' }}>
