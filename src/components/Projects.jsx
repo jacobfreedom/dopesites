@@ -18,7 +18,7 @@ export default function Projects() {
               <div className="projects-wrapper" key={projectIndex}>
                 <div className="projects-label">
                   <div className="projects-label-line" />
-                  <div className="rotated-text">{project.name}</div>
+                  <p className="rotated-text">{project.name}</p>
                 </div>
                 <a
                   href={project.url}
