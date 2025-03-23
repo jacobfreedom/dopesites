@@ -7,7 +7,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 function App() {
-  const [pages, setPages] = useState(3);
+  const [pages, setPages] = useState(0);
 
   const debounce = (func, wait) => {
     let timeout;
@@ -39,14 +39,11 @@ function App() {
 
   useEffect(() => {
     calculatePages();
-    
-    const timeoutId = setTimeout(calculatePages, 20);
 
     window.addEventListener('resize', calculatePages, { passive: true });
 
     return () => {
       window.removeEventListener('resize', calculatePages);
-      clearTimeout(timeoutId);
     };
   }, [calculatePages]);
 
