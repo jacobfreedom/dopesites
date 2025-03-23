@@ -9,6 +9,7 @@ function App() {
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 50 }}
+      dpr={[1, 2]}
     >
       <ScrollControls pages={3} damping={0.1} distance={1} >
         <Scroll html>

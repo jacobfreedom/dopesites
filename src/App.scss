@@ -107,13 +107,13 @@
   gap: $sp-109;
   padding: $sp-95 $sp-109;
 
-  &__wrapper {
+  &-wrapper {
     position: relative;
     display: flex;
     gap: $sp-33;
   }
 
-  &__frame-label {
+  &-label {
     @include clash-display-regular;
     writing-mode: sideways-lr;
     // transform: rotate(180deg);
