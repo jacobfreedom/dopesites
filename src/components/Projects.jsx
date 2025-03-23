@@ -16,7 +16,10 @@ export default function Projects() {
           <div className="projects">
             {weekProjects.map((project, projectIndex) => (
               <div className="projects-wrapper" key={projectIndex}>
-                <div className="projects-label">{project.name}</div>
+                <div className="projects-label">
+                  <div className="projects-label-line" />
+                  {project.name}
+                </div>
                 <a
                   href={project.url}
                   target="_blank"

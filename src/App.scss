@@ -110,16 +110,24 @@
   &-wrapper {
     position: relative;
     display: flex;
-    gap: $sp-33;
+    gap: $sp-13; // Use the new variable for gap
   }
 
   &-label {
     @include clash-display-regular;
     writing-mode: sideways-lr;
-    // transform: rotate(180deg);
     text-align: end;
     font-size: $fs-12;
     color: $color-text;
+    display: flex;
+    flex-direction: column;
+
+    .projects-label-line {
+      width: 1px;
+      height: 100%;
+      background-color: $color-text;
+      margin-right: $sp-7; // Use the new variable for margin
+    }
   }
 
   &__item {
