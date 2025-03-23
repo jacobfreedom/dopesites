@@ -22,14 +22,21 @@ function App() {
       }
     };
 
-    // Calculate after initial render and when window is resized
-    window.addEventListener('load', calculatePages);
+    // Calculate immediately after component mount
+    calculatePages();
+    
+    // Add a small timeout to ensure DOM is fully rendered
+    const timeoutId = setTimeout(() => {
+      calculatePages();
+    }, 100);
+
+    // Calculate when window is resized
     window.addEventListener('resize', calculatePages);
 
-    // Cleanup event listeners
+    // Cleanup event listeners and timeout
     return () => {
-      window.removeEventListener('load', calculatePages);
       window.removeEventListener('resize', calculatePages);
+      clearTimeout(timeoutId);
     };
   }, []);
 
