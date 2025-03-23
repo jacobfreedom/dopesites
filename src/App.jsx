@@ -9,7 +9,6 @@ import Footer from './components/Footer'
 function App() {
   const [pages, setPages] = useState(3);
 
-  // Debounce function to limit the frequency of updates
   const debounce = (func, wait) => {
     let timeout;
     return function executedFunction(...args) {
@@ -22,7 +21,6 @@ function App() {
     };
   };
 
-  // Memoize the calculatePages function with useCallback to prevent unnecessary re-renders
   const calculatePages = useCallback(
     debounce(() => {
       const appElement = document.querySelector('.app');
@@ -30,24 +28,20 @@ function App() {
         const appHeight = appElement.scrollHeight;
         const viewportHeight = window.innerHeight;
         const pagesValue = appHeight / viewportHeight;
-        // Only update if the value has changed significantly (avoid micro-adjustments)
         if (Math.abs(pagesValue - pages) > 0.01) {
           console.log(`App height: ${appHeight}px, Viewport height: ${viewportHeight}px, Pages ratio: ${pagesValue}`);
           setPages(pagesValue);
         }
       }
-    }, 200), // 200ms debounce time
+    }, 200),
     [pages]
   );
 
   useEffect(() => {
-    // Initial calculation
     calculatePages();
     
-    // Recalculate after images and content have likely loaded
     const timeoutId = setTimeout(calculatePages, 500);
 
-    // Use passive event listener for better performance
     window.addEventListener('resize', calculatePages, { passive: true });
 
     return () => {

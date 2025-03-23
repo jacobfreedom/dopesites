@@ -142,7 +142,7 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $sp-y-95 $sp-x-42;
+  gap: $sp-y-95 $sp-x-95;
   padding: $sp-y-95 $sp-x-109;
 
   @media (max-width: 1330px) {
@@ -161,14 +161,13 @@
 
   &-label {
     @include clash-display-medium;
-    // writing-mode: sideways-lr;
     font-size: $fs-14;
     letter-spacing: 0.03em;
     color: $color-text;
     display: flex;
     flex-direction: column;
     pointer-events: none;
-    position: relative; // Set position to relative
+    position: relative;
 
     .projects-label-line {
       position: absolute;
@@ -176,13 +175,11 @@
       height: 100%;
       background-color: $color-text;
       
-      top: 0; // Adjust positioning as needed
-      left: 0; // Adjust positioning as needed
+      top: 0;
+      left: 0;
     }
 
     .rotated-text {
-      // transform: rotate(-90deg);
-      // transform-origin: right bottom;
       margin-left: $sp-x-7;
       white-space: nowrap;
       writing-mode: vertical-rl;
