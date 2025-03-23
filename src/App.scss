@@ -11,9 +11,9 @@
   display: flex;
   align-items: flex-end;
   width: 100%;
-  margin-top: $sp-95;
-  padding: 0 calc(#{$sp-33 + $sp-42});
-  gap: $sp-268;
+  margin-top: $sp-y-95;
+  padding: 0 calc($sp-x-33 + $sp-x-42); // Remove interpolation
+  gap: $sp-x-268;
   
   &-left, &-right {
     display: flex;
@@ -40,8 +40,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: $sp-127;
-  gap: $sp-109;
+  margin-top: $sp-y-127; // Converted to vertical spacing
+  gap: $sp-x-109;
   line-height: 125%;
 
   &-left, &-right {
@@ -71,8 +71,8 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  margin-top: $sp-120;
-  padding: 0 $sp-42;
+  margin-top: $sp-y-120; // Converted to vertical spacing
+  padding: 0 $sp-x-42;
   @include clash-display-medium;
   line-height: 125%;
 
@@ -104,13 +104,13 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $sp-109;
-  padding: $sp-95 $sp-109;
+  gap: $sp-x-109;
+  padding: $sp-y-95 $sp-x-109;
 
   &-wrapper {
     position: relative;
     display: flex;
-    gap: $sp-13; // Use the new variable for gap
+    gap: $sp-x-13;
   }
 
   &-label {
@@ -126,7 +126,7 @@
       width: 1px;
       height: 100%;
       background-color: $color-text;
-      margin-right: $sp-7; // Use the new variable for margin
+      margin-right: $sp-x-7;
     }
   }
 
@@ -166,7 +166,7 @@
 
   &-placeholder {
     filter: blur(10px);
-    transform: scale(1.05); // Slightly larger to prevent blur edges from showing
+    transform: scale(1.05);
     opacity: 1;
   }
 
@@ -181,4 +181,9 @@
   &-hidden {
     opacity: 0;
   }
+}
+
+:root {
+  --sp-95: #{$sp-y-95};
+  --sp-268: #{$sp-y-268};
 }

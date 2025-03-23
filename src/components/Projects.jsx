@@ -13,7 +13,7 @@ export default function Projects() {
             {weekIndex === 0 && <p className="intro-right">FREE TIME INITIATIVE</p>}
           </div>
 
-          <div className="projects">
+          <div className="projects" style={{ paddingTop: weekIndex === 0 ? 'var(--sp-95)' : 'var(--sp-268)' }}>
             {weekProjects.map((project, projectIndex) => (
               <div className="projects-wrapper" key={projectIndex}>
                 <div className="projects-label">
