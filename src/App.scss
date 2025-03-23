@@ -259,6 +259,8 @@
   justify-content: center;
   align-items: center;
   color: $color-text;
+  margin-bottom: $sp-y-95;
+  gap: $sp-y-7;
 
   &-link {
     font-size: $fs-20;
