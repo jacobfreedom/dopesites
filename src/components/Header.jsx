@@ -1,6 +1,8 @@
 import React from 'react'
+import { useWindowSize } from '../hooks/useWindowSize'
 
 export default function Header() {
+  const { width } = useWindowSize();
   return (
     <>
       <header className="header">
@@ -10,8 +12,17 @@ export default function Header() {
         </div>
         <div className="header-logo">dopesites</div>
         <div className="header-right">
-          <div className="header-item">BY</div>
-          <a href='#' className="header-item">JAKUB SVOBODA</a>
+          {width > 680 ? (
+            <>
+              <div className="header-item">BY</div>
+              <a href='#' className="header-item">JAKUB SVOBODA</a>
+            </>
+          ) : (
+            <>
+              <a href='#' className="header-item">JAKUB</a>
+              <a href='#' className="header-item">SVOBODA</a>
+            </>
+          )}
         </div>
       </header>
 
