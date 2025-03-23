@@ -139,6 +139,7 @@
 
   &-label {
     @include clash-display-medium;
+    // writing-mode: sideways-lr;
     font-size: $fs-14;
     letter-spacing: 0.03em;
     color: $color-text;
@@ -148,7 +149,7 @@
     position: relative; // Set position to relative
 
     .projects-label-line {
-      position: absolute; // Set position to absolute
+      position: absolute;
       width: 1px;
       height: 100%;
       background-color: $color-text;
@@ -158,10 +159,17 @@
     }
 
     .rotated-text {
-      transform: rotate(-90deg);
-      transform-origin: right bottom;
+      // transform: rotate(-90deg);
+      // transform-origin: right bottom;
       margin-left: $sp-x-7;
       white-space: nowrap;
+      writing-mode: vertical-rl;
+      -moz-transform: scale(-1, -1);
+      -webkit-transform: scale(-1, -1);
+      -o-transform: scale(-1, -1);
+      -ms-transform: scale(-1, -1);
+      transform: scale(-1, -1);
+      text-orientation: mixed;
     }
   }
 
