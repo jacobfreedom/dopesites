@@ -15,7 +15,7 @@
   padding: 0 calc($sp-x-33 + $sp-x-42);
   gap: $sp-x-268;
 
-  @media (max-width: 880px) {
+  @media (max-width: 1080px) {
     gap: 0; // Set gap to 0 at 880px
   }
   
@@ -34,30 +34,15 @@
       align-items: flex-end;
       text-align: end;
     }
-
-    @media (max-width: 765px) {
-      .header-item:nth-child(1) {
-        display: none; // Hide the first header item at 576px
-      }
-    }
-
-    .header-item:nth-child(2) {
-      // text-decoration: underline;
-    }
-
-    @media (max-width: 765px) {
-      .header-item:nth-child(2)::after {
-        content: '\A'; 
-        white-space: pre; // Ensure pre-wrap to handle line breaks
-        display: block; // Ensure the line break is visible
-      }
-    }
   }
 
   &-item {
     @include clash-display-regular;
     font-size: $fs-20;
     color: $color-text;
+    @media (max-width: 765px) {
+      font-size: $fs-15;
+    }
   }
 
   &-logo {

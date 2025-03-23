@@ -24,7 +24,7 @@ function App() {
     
     const timeoutId = setTimeout(() => {
       calculatePages();
-    }, 100);
+    }, 200);
 
     window.addEventListener('resize', calculatePages);
 
