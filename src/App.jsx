@@ -4,9 +4,10 @@ import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
 import HeaderCenter from './components/HeaderCenter'
+import FontPreloader from './components/FontPreloader'
 
 function App() {
-  const [pages, setPages] = useState(); // Default value
+  const [pages, setPages] = useState(3); // Default value
 
   useEffect(() => {
     // Function to calculate the correct pages value
@@ -33,19 +34,21 @@ function App() {
   }, []);
 
   return (
-    <Canvas
-      camera={{ position: [0, 0, 5], fov: 50 }}
-      dpr={[1, 2]}
-    >
-      <ScrollControls pages={pages} damping={0.1} distance={1}>
-        <Scroll html>
-          <div className="app">
-            <HeaderCenter />
-            <Projects />
-          </div>
-        </Scroll>
-      </ScrollControls>
-    </Canvas>
+    <FontPreloader>
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        dpr={[1, 2]}
+      >
+        <ScrollControls pages={pages} damping={0.1} distance={1}>
+          <Scroll html>
+            <div className="app">
+              <HeaderCenter />
+              <Projects />
+            </div>
+          </Scroll>
+        </ScrollControls>
+      </Canvas>
+    </FontPreloader>
   )
 }
 
