@@ -5,7 +5,8 @@ import sharp from 'sharp';
 // Directories containing images to optimize
 const imageDirectories = [
   path.join(process.cwd(), 'public/images/w1'),
-  path.join(process.cwd(), 'public/images/w2')
+  path.join(process.cwd(), 'public/images/w2'),
+  path.join(process.cwd(), 'public/og')
 ];
 
 // WebP conversion options
