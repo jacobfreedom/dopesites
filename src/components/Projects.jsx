@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import projects from '../assets/data/projects.json'
 
 export default function Projects() {
@@ -7,9 +7,9 @@ export default function Projects() {
       {projects.map((weekProjects, weekIndex) => (
         <React.Fragment key={weekIndex}>
           <div className="intro">
-            <p className="intro-left">WEEKLY DROPS</p>
-            <p className="intro-week">W-{weekIndex}</p>
-            <p className="intro-right">FREE TIME INITIATIVE</p>
+            {weekIndex === 0 && <p className="intro-left">WEEKLY DROPS</p>}
+            <p className="intro-week">W-{projects.length - 1 - weekIndex}</p>
+            {weekIndex === 0 && <p className="intro-right">FREE TIME INITIATIVE</p>}
           </div>
 
           <div className="projects">
@@ -22,7 +22,14 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="projects__item"
                 >
-                  <img src={project.image} alt={project.name} />
+                  <img 
+                    src={project.image.replace(/\.png$/, '.webp')} 
+                    alt={project.name}
+                    onError={(e) => {
+                      // Fallback to original PNG if WebP fails to load
+                      e.target.src = project.image;
+                    }}
+                  />
                 </a>
               </div>
             ))}

@@ -68,7 +68,7 @@
 
 .intro {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
   margin-top: $sp-120;
@@ -91,6 +91,11 @@
     margin: 0;
     letter-spacing: 0.35em;
   }
+
+  &-left {
+    justify-content: flex-start;
+  }
+
   &-right {
     justify-content: flex-end;
   }
