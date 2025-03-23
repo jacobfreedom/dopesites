@@ -18,13 +18,13 @@ export default function Projects() {
               <div className="projects-wrapper" key={projectIndex}>
                 <div className="projects-label">
                   <div className="projects-label-line" />
-                  {project.name}
+                  <div className="rotated-text">{project.name}</div>
                 </div>
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="projects__item"
+                  className="projects-item"
                 >
                   <LazyImage 
                     src={project.image.replace(/\.png$/, '.webp')} 
