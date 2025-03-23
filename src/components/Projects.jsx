@@ -26,7 +26,6 @@ export default function Projects() {
                     src={project.image.replace(/\.png$/, '.webp')} 
                     alt={project.name}
                     onError={(e) => {
-                      // Fallback to original PNG if WebP fails to load
                       e.target.src = project.image;
                     }}
                   />
