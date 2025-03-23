@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Projects from './components/Projects'
 import HeaderCenter from './components/HeaderCenter'
-import FontPreloader from './components/FontPreloader'
 
 function App() {
   const [pages, setPages] = useState(3); // Default value
@@ -41,8 +40,7 @@ function App() {
   }, []);
 
   return (
-    <FontPreloader>
-      <Canvas
+    <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
         dpr={[1, 2]}
       >
@@ -55,7 +53,6 @@ function App() {
           </Scroll>
         </ScrollControls>
       </Canvas>
-    </FontPreloader>
   )
 }
 
