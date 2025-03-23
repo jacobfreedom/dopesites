@@ -272,5 +272,9 @@
 
   &-paragraph {
     font-size: $fs-20;
+
+    @media (max-width: 765px) {
+      font-size: $fs-15;
+    }
   }
 }
