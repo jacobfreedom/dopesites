@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import './App.scss'
 import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
@@ -8,31 +8,52 @@ import Header from './components/Header'
 function App() {
   const [pages, setPages] = useState(3);
 
-  useEffect(() => {
-    const calculatePages = () => {
+  // Debounce function to limit the frequency of updates
+  const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  // Memoize the calculatePages function with useCallback to prevent unnecessary re-renders
+  const calculatePages = useCallback(
+    debounce(() => {
       const appElement = document.querySelector('.app');
       if (appElement) {
         const appHeight = appElement.scrollHeight;
         const viewportHeight = window.innerHeight;
         const pagesValue = appHeight / viewportHeight;
-        console.log(`App height: ${appHeight}px, Viewport height: ${viewportHeight}px, Pages ratio: ${pagesValue}`);
-        setPages(pagesValue);
+        // Only update if the value has changed significantly (avoid micro-adjustments)
+        if (Math.abs(pagesValue - pages) > 0.01) {
+          console.log(`App height: ${appHeight}px, Viewport height: ${viewportHeight}px, Pages ratio: ${pagesValue}`);
+          setPages(pagesValue);
+        }
       }
-    };
+    }, 200), // 200ms debounce time
+    [pages]
+  );
 
+  useEffect(() => {
+    // Initial calculation
     calculatePages();
     
-    const timeoutId = setTimeout(() => {
-      calculatePages();
-    }, 200);
+    // Recalculate after images and content have likely loaded
+    const timeoutId = setTimeout(calculatePages, 500);
 
-    window.addEventListener('resize', calculatePages);
+    // Use passive event listener for better performance
+    window.addEventListener('resize', calculatePages, { passive: true });
 
     return () => {
       window.removeEventListener('resize', calculatePages);
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [calculatePages]);
 
   return (
     <Canvas
