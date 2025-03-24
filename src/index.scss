@@ -29,6 +29,12 @@ html, body, #root {
 
 * {
   box-sizing: border-box;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  pointer-events: auto;
 }
 
 ::-webkit-scrollbar {
