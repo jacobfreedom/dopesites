@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <div className="footer">
         <a href='https://ko-fi.com/jakubsvoboda' className="footer-link">SUPPORT</a>
-        <p className='footer-paragraph'>HOPE YOU ENJOYED</p>
+        <p className='footer-paragraph'>IF YOU LIKED THE SELECTION</p>
       </div>
     </>
   )
