@@ -16,7 +16,7 @@
   gap: $sp-x-268;
 
   @media (max-width: 1080px) {
-    gap: 0; // Set gap to 0 at 880px
+    gap: 0;
   }
   
   &-left, &-right {
@@ -25,7 +25,6 @@
     justify-content: space-between;
     @media (max-width: 1090px) {
       flex-direction: column;
-      // gap: $sp-y-7;
     }
   }
 
@@ -35,16 +34,16 @@
       text-align: end;
     }
     .header-item:last-child {
-      @include clash-display-medium; // Apply mixin to the last child
+      @include clash-display-medium;
 
       @media (max-width: 680px) {
-        @include clash-display-medium; // Apply mixin at 680px
+        @include clash-display-medium;
       }
     }
 
     @media (max-width: 680px) {
       .header-item {
-        @include clash-display-medium; // Apply mixin to all children at 680px
+        @include clash-display-medium;
       }
     }
   }
@@ -71,7 +70,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: $sp-y-127; // Converted to vertical spacing
+  margin-top: $sp-y-127;
   gap: $sp-x-109;
   line-height: 125%;
 
@@ -97,7 +96,7 @@
     line-height: 125%;
 
     @media (max-height: 890px) {
-      font-size: $fs-14; // Adjust font size at 980px height
+      font-size: $fs-14;
     }
   }
 }
@@ -111,7 +110,6 @@
   padding: 0 $sp-x-42;
   @include clash-display-medium;
   line-height: 120%;
-
 
   &-week {
     font-size: $fs-20;
@@ -146,11 +144,11 @@
   padding: $sp-y-95 $sp-x-109;
 
   @media (max-width: 1330px) {
-    grid-template-columns: repeat(2, 1fr); // Change to 2 columns at 1330px
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 680px) {
-    grid-template-columns: repeat(1, 1fr); // Change to 1 column at 680px
+    grid-template-columns: repeat(1, 1fr);
   }
 
   &-wrapper {
@@ -249,7 +247,6 @@
   --sp-nextgrids: #{$sp-y-127};
 }
 
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -269,7 +266,6 @@
 
   &-paragraph {
     font-size: $fs-20;
-    // @include clash-display-medium;
 
     @media (max-width: 765px) {
       font-size: $fs-15;

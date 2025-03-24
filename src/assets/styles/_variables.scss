@@ -1,10 +1,9 @@
 // Colors
 $color-bg-primary: #181418;
-
 $color-text: #E3D7CC;
 $color-accent: #8CA8B4;
 
-// Spacing (converted to fluid units)
+// Spacing
 $sp-x-7: calc(7 / 1728 * 100vw);
 $sp-x-13: calc(13 / 1728 * 100vw);
 $sp-x-33: calc(33 / 1728 * 100vw);
@@ -21,7 +20,7 @@ $sp-y-120: calc(120 / 1117 * 100vh);
 $sp-y-127: calc(127 / 1117 * 100vh);
 $sp-y-268: calc(268 / 1117 * 100vh);
 
-// Typography (converted to fluid units using vh)
+// Typography
 $fs-12: calc(12 / 1117 * 100vh);
 $fs-13: calc(13 / 1117 * 100vh);
 $fs-14: calc(14 / 1117 * 100vh);

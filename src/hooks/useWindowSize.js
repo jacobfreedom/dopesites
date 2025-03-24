@@ -24,7 +24,7 @@ export function useWindowSize() {
           width: window.innerWidth,
         });
       }
-    }, 100), // 100ms debounce time
+    }, 100),
     [windowSize.width]
   );
 
