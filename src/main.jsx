@@ -3,61 +3,25 @@ import { createRoot } from 'react-dom/client'
 import './index.scss'
 import App from './App.jsx'
 import { Analytics } from '@vercel/analytics/react'
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll } from '@react-three/drei'
+import { Scroll, useScroll, View } from '@react-three/drei'
 
 function Main() {
-  const [pages, setPages] = useState(0);
-
-  const debounce = (func, wait) => {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  };
-
-  const calculatePages = useCallback(
-    debounce(() => {
-      const appElement = document.querySelector('.app');
-      if (appElement) {
-        const appHeight = appElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
-        const pagesValue = appHeight / viewportHeight;
-        console.log(`App height: ${appHeight}px, Viewport height: ${viewportHeight}px, Pages ratio: ${pagesValue}`);
-        setPages(pagesValue);
-      }
-    }, 200),
-    [pages]
-  );
-
-  useEffect(() => {
-    calculatePages();
-
-    window.addEventListener('resize', calculatePages, { passive: true });
-
-    return () => {
-      window.removeEventListener('resize', calculatePages);
-    };
-  }, [calculatePages]);
-
   return (
     <StrictMode>
-      <Canvas
-        dpr={[1, 1]}
-        gl={{ antialias: false }}
-      >
-        <ScrollControls pages={pages} damping={0.2} distance={1} prepend>
-          <Scroll html>
+      <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'auto' }}>
+          <Canvas
+            dpr={[1, 1]}
+            gl={{ antialias: false }}
+            style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
+          >
+            <View.Port />
+          </Canvas>
+          <div style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}>
             <App />
-          </Scroll>
-        </ScrollControls>
-      </Canvas>
+          </div>
+      </div>
       <Analytics />
     </StrictMode>
   );
