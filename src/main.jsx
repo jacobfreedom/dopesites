@@ -9,7 +9,6 @@ import { ScrollControls, Scroll } from '@react-three/drei'
 
 function Main() {
   const [pages, setPages] = useState(0);
-  const [isInitialized, setIsInitialized] = useState(false);
  
   const debounce = (func, wait) => {
     let timeout;
@@ -38,25 +37,20 @@ function Main() {
   );
 
   useEffect(() => {
-    if (!isInitialized) {
-      calculatePages();
-      setIsInitialized(true);
-    }
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        setTimeout(calculatePages, 100);
-      }
-    };
+    calculatePages();
 
     window.addEventListener('resize', calculatePages, { passive: true });
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        calculatePages();
+      }
+    });
 
     return () => {
       window.removeEventListener('resize', calculatePages);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      document.removeEventListener('visibilitychange', calculatePages);
     };
-  }, [calculatePages, isInitialized]);
+  }, [calculatePages]);
 
   return (
     <StrictMode>
