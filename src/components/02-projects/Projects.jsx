@@ -1,7 +1,7 @@
 import React from 'react'
-import projects from '../assets/data/projects.json'
+import projects from '../../assets/data/projects.json'
 import LazyImage from './LazyImage'
-import { useWindowSize } from '../hooks/useWindowSize'
+import { useWindowSize } from '../../hooks/useWindowSize'
 
 export default function Projects() {
   const { width } = useWindowSize();
