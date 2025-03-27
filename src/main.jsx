@@ -48,13 +48,9 @@ function Main() {
       }
     });
 
-    // Initialize scroll position tracking
     scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
 
-    // Preserve scroll position when navigating back and during scrolling
     const handleScroll = () => {
-      // Only update the scroll position if we've already scrolled once
-      // or if we're at the initial position
       if (!hasScrolledRef.current) {
         hasScrolledRef.current = true;
       }
@@ -62,10 +58,8 @@ function Main() {
       scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
     };
 
-    // Handle when user returns to the page (e.g., after clicking a link)
     const handleVisibilityChange = () => {
       if (!document.hidden && scrollPositionRef.current !== null) {
-        // Reset the hasScrolled flag when returning to the page
         hasScrolledRef.current = false;
       }
     };
