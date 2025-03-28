@@ -72,6 +72,7 @@ const appRef = useCallback((node) => {
     const handleScroll = () => {
       if (!hasScrolledRef.current) {
         hasScrolledRef.current = true;
+        return;
       }
       
       scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
@@ -79,7 +80,8 @@ const appRef = useCallback((node) => {
 
     const handleVisibilityChange = () => {
       if (!document.hidden && scrollPositionRef.current !== null) {
-        hasScrolledRef.current = false;
+        hasScrolledRef.current = true;
+        window.scrollTo(0, scrollPositionRef.current);
         calculatePages();
       }
     };
