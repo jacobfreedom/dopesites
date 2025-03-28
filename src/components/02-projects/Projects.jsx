@@ -1,6 +1,6 @@
 import React from 'react'
 import projects from '../../assets/data/projects.json'
-import LazyImage from './LazyImage'
+import ThreeImage from './ThreeImage'
 import { useWindowSize } from '../../hooks/useWindowSize'
 
 export default function Projects() {
@@ -34,7 +34,7 @@ export default function Projects() {
                   />
                 </a>
               </div>
-            ))}
+            ))}          
           </div>
         </React.Fragment>
       ))}

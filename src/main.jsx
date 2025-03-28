@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { Analytics } from '@vercel/analytics/react'
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll } from '@react-three/drei'
+import { ScrollControls, Scroll, View } from '@react-three/drei'
 
 function Main() {
   const [pages, setPages] = useState(0);
@@ -80,11 +80,13 @@ function Main() {
       <Canvas
         dpr={[1, 1]}
         gl={{ antialias: false }}
+        eventSource={document.getElementById('app')}
       >
-        <ScrollControls pages={pages} damping={0.2} distance={1} prepend>
-          <Scroll html>
-            <App />
-          </Scroll>
+        <ScrollControls pages={pages} damping={0.2} distance={1}>
+            <Scroll html>
+              <App />
+            </Scroll>
+          <View.Port />
         </ScrollControls>
       </Canvas>
       <Analytics />

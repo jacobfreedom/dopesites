@@ -20,9 +20,9 @@ const LazyImage = ({ src, alt, className }) => {
 
   const handleLoad = () => {
     // Add a small delay to ensure smooth transition
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       setIsLoaded(true);
-    });
+    }, 100);
   };
 
   const handleError = () => {
