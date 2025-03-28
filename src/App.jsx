@@ -11,3 +11,5 @@ const App = React.forwardRef((props, ref) => (
     <Footer />
   </div>
 ));
+
+export default App;
