@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const LazyImage = ({ src, alt, className }) => {
+export default function LazyImage({ src, alt, className }) {
   // Return null if src is empty to prevent browser from downloading the whole page
   if (!src) {
     return null;
@@ -57,5 +57,3 @@ const LazyImage = ({ src, alt, className }) => {
     </div>
   );
 };
-
-export default LazyImage;
