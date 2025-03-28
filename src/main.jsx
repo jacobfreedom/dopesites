@@ -1,14 +1,13 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.scss'
 import App from './App.jsx'
 import { Analytics } from '@vercel/analytics/react'
-import React, { useEffect, useState, useCallback, useRef } from 'react'
+import React, { useEffect, useState, useCallback, useRef, StrictMode } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll, View } from '@react-three/drei'
+import { ScrollControls, Scroll } from '@react-three/drei'
 
 function Main() {
-  const [pages, setPages] = useState(0);
+  const [pages, setPages] = useState(1);
   const scrollPositionRef = useRef(null);
   const hasScrolledRef = useRef(false);
  
@@ -80,13 +79,11 @@ function Main() {
       <Canvas
         dpr={[1, 1]}
         gl={{ antialias: false }}
-        eventSource={document.getElementById('app')}
       >
-        <ScrollControls pages={pages} damping={0.2} distance={1}>
+        <ScrollControls pages={pages} damping={0.2} distance={1} >
             <Scroll html>
               <App />
             </Scroll>
-          <View.Port />
         </ScrollControls>
       </Canvas>
       <Analytics />
@@ -94,4 +91,5 @@ function Main() {
   );
 }
 
-createRoot(document.getElementById('root')).render(<Main />)
+const root = createRoot(document.getElementById('root'));
+root.render(<Main />);
