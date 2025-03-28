@@ -74,7 +74,7 @@ function Main() {
       <StrictMode>
         <Canvas
           dpr={[1, 1]}
-          gl={{ antialias: false }}
+          gl={{ alpha: false, antialias: false, stencil: false, depth: false }}
         >
           <ScrollControls pages={pages} damping={0.2} distance={2.1}>
             <Scroll html>
