@@ -81,7 +81,9 @@ const appRef = useCallback((node) => {
     const handleVisibilityChange = () => {
       if (!document.hidden && scrollPositionRef.current !== null) {
         hasScrolledRef.current = false;
-        window.scrollTo(0, scrollPositionRef.current);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPositionRef.current);
+        });
       }
     };
 
@@ -97,7 +99,6 @@ const appRef = useCallback((node) => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', stableCalculate);
       window.removeEventListener('orientationchange', stableCalculate);
-      document.removeEventListener('visibilitychange', stableCalculate);
     };
   }, [calculatePages]);
 
