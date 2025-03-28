@@ -37,9 +37,10 @@ function Main() {
     const stableCalculate = calculatePages;
     window.addEventListener('resize', stableCalculate, { passive: true });
     window.addEventListener('orientationchange', stableCalculate);
-    document.addEventListener('visibilitychange', () => {
+    const handleVisibility = () => {
       if (document.visibilityState === 'visible') stableCalculate();
-    });
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
 
     scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
 
@@ -64,7 +65,7 @@ function Main() {
       window.removeEventListener('resize', stableCalculate);
       window.removeEventListener('orientationchange', stableCalculate);
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', stableCalculate);
+      document.removeEventListener('visibilitychange', handleVisibility);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [calculatePages]);
