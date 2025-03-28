@@ -1,6 +1,6 @@
 import React from 'react'
 import projects from '../../assets/data/projects.json'
-import ThreeImage from './ThreeImage'
+// import ThreeImage from './ThreeImage'
 import { useWindowSize } from '../../hooks/useWindowSize'
 
 export default function Projects() {
