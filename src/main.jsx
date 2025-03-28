@@ -11,17 +11,13 @@ function Main() {
   const scrollPositionRef = useRef(null);
   const hasScrolledRef = useRef(false);
  
-  const debounce = (func, wait) => {
+  const debounce = useCallback((func, wait) => {
     let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
+    return (...args) => {
       clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
+      timeout = setTimeout(() => func(...args), wait);
     };
-  };
+  }, []);
 
   const calculatePages = useCallback(
     debounce(() => {
@@ -29,22 +25,20 @@ function Main() {
       if (appElement) {
         const appHeight = appElement.scrollHeight;
         const viewportHeight = window.innerHeight;
-        const pagesValue = appHeight / viewportHeight;
-        console.log(`App height: ${appHeight}px, Viewport height: ${viewportHeight}px, Pages ratio: ${pagesValue}`);
-        setPages(pagesValue);
+        setPages(appHeight / viewportHeight);
       }
     }, 200),
-    []
+    [debounce]
   );
 
   useEffect(() => {
     calculatePages();
 
-    window.addEventListener('resize', calculatePages, { passive: true });
+    const stableCalculate = calculatePages;
+    window.addEventListener('resize', stableCalculate, { passive: true });
+    window.addEventListener('orientationchange', stableCalculate);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) {
-        calculatePages();
-      }
+      if (document.visibilityState === 'visible') stableCalculate();
     });
 
     scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
@@ -67,27 +61,30 @@ function Main() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      window.removeEventListener('resize', calculatePages);
+      window.removeEventListener('resize', stableCalculate);
+      window.removeEventListener('orientationchange', stableCalculate);
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', calculatePages);
+      document.removeEventListener('visibilitychange', stableCalculate);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [calculatePages]);
 
   return (
-    <StrictMode>
-      <Canvas
-        dpr={[1, 1]}
-        gl={{ antialias: false }}
-      >
-        <ScrollControls pages={pages} damping={0.2} distance={1} >
+    <>
+      <StrictMode>
+        <Canvas
+          dpr={[1, 1]}
+          gl={{ antialias: false }}
+        >
+          <ScrollControls pages={pages} damping={0.2} distance={1}>
             <Scroll html>
               <App />
             </Scroll>
-        </ScrollControls>
-      </Canvas>
+          </ScrollControls>
+        </Canvas>
+      </StrictMode>
       <Analytics />
-    </StrictMode>
+    </>
   );
 }
 
