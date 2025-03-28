@@ -24,12 +24,22 @@ const appRef = useCallback((node) => {
   }, []);
 
   const calculatePages = useCallback(() => {
-    if (!appElement) return;
-    const appHeight = appElement.scrollHeight;
-    const viewportHeight = window.innerHeight;
-    const calculatedPages = appHeight / viewportHeight;
-    setPages(calculatedPages);
+    if (appElement) {
+      const appHeight = appElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      const calculatedPages = appHeight / viewportHeight;
+      console.log('Calculating pages:', { 
+        appHeight, 
+        viewportHeight, 
+        calculatedPages,
+        scrollTop: appElement.scrollTop,
+        clientHeight: appElement.clientHeight
+      });
+      setPages(calculatedPages);
+    }
   }, [appElement]);
+
+  
 
   useEffect(() => {
     if (!appElement) return;
@@ -40,10 +50,30 @@ const appRef = useCallback((node) => {
     resizeObserver.observe(appElement);
     calculatePages();
 
+    return () => {
+      resizeObserver.unobserve(appElement);
+      resizeObserver.disconnect();
+    };
+  }, [calculatePages, appElement]);
+
+  
+
+  useEffect(() => {
+    if (appElement) {
+      calculatePages();
+    }
+  }, [calculatePages, appElement]);
+
+  useEffect(() => {
+    calculatePages();
+
+    scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
+
     const handleScroll = () => {
       if (!hasScrolledRef.current) {
         hasScrolledRef.current = true;
       }
+      
       scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
     };
 
@@ -54,20 +84,20 @@ const appRef = useCallback((node) => {
       }
     };
 
+    const stableCalculate = calculatePages;
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('resize', calculatePages, { passive: true });
-    window.addEventListener('orientationchange', calculatePages);
+    window.addEventListener('resize', stableCalculate, { passive: true });
+    window.addEventListener('orientationchange', stableCalculate);
 
     return () => {
-      resizeObserver.unobserve(appElement);
-      resizeObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('resize', calculatePages);
-      window.removeEventListener('orientationchange', calculatePages);
+      window.removeEventListener('resize', stableCalculate);
+      window.removeEventListener('orientationchange', stableCalculate);
     };
-  }, [appElement, calculatePages]);
+  }, [calculatePages]);
 
   return (
     <>
