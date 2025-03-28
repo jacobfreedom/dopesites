@@ -4,14 +4,10 @@ import Header from './components/01-header/Header'
 import Projects from './components/02-projects/Projects'
 import Footer from './components/03-footer/Footer'
 
-function App() {
-  return (
-    <div id="app" className='app'>
-      <Header />
-      <Projects />
-      <Footer />
-    </div>
-  )
-}
-
-export default App
+const App = React.forwardRef((props, ref) => (
+  <div id="app" className='app' ref={ref}>
+    <Header />
+    <Projects />
+    <Footer />
+  </div>
+));
