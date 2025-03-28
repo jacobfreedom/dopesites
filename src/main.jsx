@@ -76,7 +76,7 @@ function Main() {
           dpr={[1, 1]}
           gl={{ antialias: false }}
         >
-          <ScrollControls pages={pages} damping={0.2} distance={3.5}>
+          <ScrollControls pages={pages} damping={0.2} distance={2.1}>
             <Scroll html>
               <App />
             </Scroll>
