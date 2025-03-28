@@ -80,15 +80,22 @@ const appRef = useCallback((node) => {
     const handleVisibilityChange = () => {
       if (!document.hidden && scrollPositionRef.current !== null) {
         hasScrolledRef.current = false;
+        calculatePages();
       }
     };
 
+    const stableCalculate = calculatePages;
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('resize', stableCalculate, { passive: true });
+    window.addEventListener('orientationchange', stableCalculate);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('resize', stableCalculate);
+      window.removeEventListener('orientationchange', stableCalculate);
     };
   }, [calculatePages]);
 
