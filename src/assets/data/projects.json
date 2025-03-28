@@ -1,6 +1,38 @@
 [
   [
     {
+      "name": "GOODMEASURE",
+      "image": "/images/w2/goodmeasure.png",
+      "url": "https://goodmeasure.xyz/"
+    },
+    {
+      "name": "INDEX",
+      "image": "/images/w2/index.png",
+      "url": "https://index.studio/"
+    },
+    {
+      "name": "FLASH GORDON",
+      "image": "/images/w2/flashgordon.png",
+      "url": "https://theflashgordon.de/"
+    },
+    {
+      "name": "AND ASSOCIATES",
+      "image": "/images/w2/andassociates.png",
+      "url": "https://andassociates.studio/"
+    },
+    {
+      "name": "BARKAS",
+      "image": "/images/w2/barkas.png",
+      "url": "https://barkas.com/cases/space10/"
+    },
+    {
+      "name": "HAUSMARKT",
+      "image": "/images/w2/hausmarkt.png",
+      "url": "https://hausmarkt.com.au/"
+    }
+  ],
+  [
+    {
       "name": "MOODERS",
       "image": "/images/w1/mooders.png",
       "url": "https://mooders.net/"
@@ -39,28 +71,28 @@
   [
     {
       "name": "BUREAU COOL",
-      "image": "/images/w2/bureaucool.png",
+      "image": "/images/w0/bureaucool.png",
       "url": "https://bureau.cool/"
     },
     {
       "name": "HKI PARIS",
-      "image": "/images/w2/hki.png",
+      "image": "/images/w0/hki.png",
       "url": "https://hki.paris/en/"
     },
     {
       "name": "POST POST",
-      "image": "/images/w2/postpost.png",
+      "image": "/images/w0/postpost.png",
       "url": "https://postpost.studio/"
     },
     {
       "name": "RATIO",
-      "image": "/images/w2/ratio.png",
+      "image": "/images/w0/ratio.png",
       "url": "https://www.ratioetmotus.com/"
     },
     {
       "name": "PHILIPP POLDER",
-      "image": "/images/w2/philipppolder.png",
+      "image": "/images/w0/philipppolder.png",
       "url": "https://philipppolder.com/"
-    }
+    }  
   ]
 ]
