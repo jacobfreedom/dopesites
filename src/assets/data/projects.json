@@ -2,96 +2,96 @@
   [
     {
       "name": "GOODMEASURE",
-      "image": "/images/w2/goodmeasure.png",
+      "image": "/images/w2/goodmeasure.webp",
       "url": "https://goodmeasure.xyz/"
     },
     {
       "name": "INDEX",
-      "image": "/images/w2/index.png",
+      "image": "/images/w2/index.webp",
       "url": "https://index.studio/"
     },
     {
       "name": "FLASH GORDON",
-      "image": "/images/w2/flashgordon.png",
+      "image": "/images/w2/flashgordon.webp",
       "url": "https://theflashgordon.de/"
     },
     {
       "name": "AND ASSOCIATES",
-      "image": "/images/w2/andassociates.png",
+      "image": "/images/w2/andassociates.webp",
       "url": "https://andassociates.studio/"
     },
     {
       "name": "BARKAS",
-      "image": "/images/w2/barkas.png",
+      "image": "/images/w2/barkas.webp",
       "url": "https://barkas.com/cases/space10/"
     },
     {
       "name": "HAUSMARKT",
-      "image": "/images/w2/hausmarkt.png",
+      "image": "/images/w2/hausmarkt.webp",
       "url": "https://hausmarkt.com.au/"
     }
   ],
   [
     {
       "name": "MOODERS",
-      "image": "/images/w1/mooders.png",
+      "image": "/images/w1/mooders.webp",
       "url": "https://mooders.net/"
     },
     {
       "name": "STUDIO FACULTY",
-      "image": "/images/w1/studiofaculty.png",
+      "image": "/images/w1/studiofaculty.webp",
       "url": "https://www.studiofaculty.com/"
     },
     {
       "name": "SARAH BASSETT",
-      "image": "/images/w1/sarrahbassett.png",
+      "image": "/images/w1/sarrahbassett.webp",
       "url": "https://www.sarah-bassett.com/"
     },
     {
       "name": "NEW KID",
-      "image": "/images/w1/newkid.png",
+      "image": "/images/w1/newkid.webp",
       "url": "https://newkid.services/"
     },
     {
       "name": "WØRKS",
-      "image": "/images/w1/works.png",
+      "image": "/images/w1/works.webp",
       "url": "https://works.studio/"
     },
     {
       "name": "M GABRILO",
-      "image": "/images/w1/mgrabrilo.png",
+      "image": "/images/w1/mgrabrilo.webp",
       "url": "https://mgabrilo.work/"
     },
     {
       "name": "ILLO",
-      "image": "/images/w1/illo.png",
+      "image": "/images/w1/illo.webp",
       "url": "https://illo.systems/"
     }
   ],
   [
     {
       "name": "BUREAU COOL",
-      "image": "/images/w0/bureaucool.png",
+      "image": "/images/w0/bureaucool.webp",
       "url": "https://bureau.cool/"
     },
     {
       "name": "HKI PARIS",
-      "image": "/images/w0/hki.png",
+      "image": "/images/w0/hki.webp",
       "url": "https://hki.paris/en/"
     },
     {
       "name": "POST POST",
-      "image": "/images/w0/postpost.png",
+      "image": "/images/w0/postpost.webp",
       "url": "https://postpost.studio/"
     },
     {
       "name": "RATIO",
-      "image": "/images/w0/ratio.png",
+      "image": "/images/w0/ratio.webp",
       "url": "https://www.ratioetmotus.com/"
     },
     {
       "name": "PHILIPP POLDER",
-      "image": "/images/w0/philipppolder.png",
+      "image": "/images/w0/philipppolder.webp",
       "url": "https://philipppolder.com/"
     }  
   ]

@@ -5,17 +5,10 @@ export default function LazyImage({ src, alt, className }) {
     return null;
   }
   const [imgSrc, setImgSrc] = useState(src);
-  const originalSrc = src && src.includes('.webp') ? src.replace(/\.webp$/, '.png') : src;
 
   useEffect(() => {
     setImgSrc(src);
   }, [src]);
-
-  const handleError = () => {
-    if (imgSrc !== originalSrc) {
-      setImgSrc(originalSrc);
-    }
-  };
 
   return (
     <div className={`lazy-image-container ${className || ''}`}>
