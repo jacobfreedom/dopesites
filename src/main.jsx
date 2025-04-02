@@ -105,16 +105,20 @@ function Main() {
   return (
     <>
       <StrictMode>
+        <div>
         <Canvas
           dpr={[1, 1]}
           gl={{ alpha: false, antialias: false, stencil: false, depth: false }}
         >
           <ScrollControls pages={pages} damping={0.2} distance={2.1}>
-            <Scroll html>
-              <App ref={appRef} />
+            <Scroll>
+              {/* <App ref={appRef} /> */}
             </Scroll>
           </ScrollControls>
         </Canvas>
+
+        </div>
+
       </StrictMode>
       <Analytics />
     </>

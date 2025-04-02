@@ -1,6 +1,6 @@
 @use './assets/styles/index' as *;
 @use './assets/fonts/fonts' as *;
-@use './assets/styles/_variables' as *; // Import the variables
+@use './assets/styles/_variables' as *;
 
 :root {
   @include clash-display-regular;
