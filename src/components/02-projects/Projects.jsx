@@ -1,6 +1,5 @@
 import React from 'react'
 import projects from '../../assets/data/projects.json'
-// import ThreeImage from './ThreeImage'
 import LazyImage from './LazyImage'
 import { useWindowSize } from '../../hooks/useWindowSize'
 

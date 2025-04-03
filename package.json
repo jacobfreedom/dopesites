@@ -12,12 +12,12 @@
     "generate-placeholders": "node scripts/generate-placeholders.js"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.4",
-    "@react-three/fiber": "^9.1.0",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.14.0",
     "@types/three": "^0.174.0",
     "@vercel/analytics": "^1.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "three": "^0.174.0"
   },
   "devDependencies": {
