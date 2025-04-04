@@ -29,8 +29,9 @@ export default function Projects() {
                   className="projects-item"
                 >
                   <LazyImage 
-                    src={project.image.replace(/\.png$/, '.webp')} 
+                    src={project.image} 
                     alt={project.name}
+                    priority={weekIndex === 0 && projectIndex < 2}
                   />
                 </a>
               </div>
