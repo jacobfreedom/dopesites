@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-export default function LazyImage({ src, alt, className, priority = false }) {
+export default function LazyImage({ src, alt, className, priority }) {
   const [placeholderError, setPlaceholderError] = useState(false);
   const imgRef = useRef(null);
 
@@ -40,5 +40,4 @@ export default function LazyImage({ src, alt, className, priority = false }) {
       />
     </div>
   );
-
 };

@@ -31,7 +31,7 @@ export default function Projects() {
                   <LazyImage 
                     src={project.image} 
                     alt={project.name}
-                    priority={weekIndex === 0 && projectIndex < 2}
+                    priority={weekIndex === 0}
                   />
                 </a>
               </div>
