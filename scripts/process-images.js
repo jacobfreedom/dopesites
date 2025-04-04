@@ -6,6 +6,7 @@ import sharp from 'sharp';
 const imageDirectories = [
   path.join(process.cwd(), 'public/images/w1'),
   path.join(process.cwd(), 'public/images/w2'),
+  path.join(process.cwd(), 'public/images/w3'),
 ];
 
 // WebP conversion options

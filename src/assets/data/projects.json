@@ -1,6 +1,39 @@
 [
   [
     {
+      "name": "PP FRAGMENT",
+      "image": "/images/w3/PP FRAGMENT.webp",
+      "url": "https://elimar.lmigroupintl.com/"
+    },
+
+    {
+      "name": "YZA VOKU",
+      "image": "/images/w3/YZA VOKU.webp",
+      "url": "https://www.yzavoku.com/"
+    },
+    {
+      "name": "LMI ELIMAR",
+      "image": "/images/w3/LMI ELIMAR.webp",
+      "url": "https://elimar.lmigroupintl.com/"
+    },
+    {
+      "name": "ZETR",
+      "image": "/images/w3/ZETR.webp",
+      "url": "https://www.zetr.co/"
+    },
+    {
+      "name": "SLAPS",
+      "image": "/images/w3/SLAPS.webp",
+      "url": "https://brandingthatslaps.com/"
+    },
+    {
+      "name": "DEMON",
+      "image": "/images/w3/DEMON.webp",
+      "url": "https://demonfootwear.com/"
+    }
+  ],
+  [
+    {
       "name": "GOODMEASURE",
       "image": "/images/w2/goodmeasure.webp",
       "url": "https://goodmeasure.xyz/"
