@@ -7,6 +7,7 @@ const imageDirectories = [
   path.join(process.cwd(), 'public/images/w1'),
   path.join(process.cwd(), 'public/images/w2'),
   path.join(process.cwd(), 'public/images/w3'),
+  path.join(process.cwd(), 'public/images/w4'),
 ];
 
 // WebP conversion options
