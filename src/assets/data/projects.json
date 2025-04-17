@@ -1,6 +1,53 @@
 [
   [
     {
+      "name": "NO PLANS",
+      "image": "/images/w5/noplans.webp",
+      "url": "https://noplans.studio/"
+    },
+    {
+      "name": "REVERSED",
+      "image": "/images/w5/reversed.webp",
+      "url": "https://www.reversed.eco/"
+    },
+    {
+      "name": "INVERSE",
+      "image": "/images/w5/inverse.webp",
+      "url": "https://www.inverse.com/"
+    },
+    {
+      "name": "DAILY DIALOGUE",
+      "image": "/images/w5/dailydialogue.webp",
+      "url": "https://www.dailydialogue.cc/"
+    },
+    {
+      "name": "FOAM",
+      "image": "/images/w5/foam.webp",
+      "url": "https://www.foam.org/talent-2024"
+    },
+    {
+      "name": "FOTOGRAFISKA",
+      "image": "/images/w5/fotografiska.webp",
+      "url": "https://stockholm.fotografiska.com/"
+    },
+    {
+      "name": "TEREN",
+      "image": "/images/w5/teren.webp",
+      "url": "https://jasuteren.cz/"
+    },
+    {
+      "name": "2C EARTH",
+      "image": "/images/w5/2c-earth.webp",
+      "url": "https://www.2-c.earth/destination/galapagos"
+    },
+    {
+      "name": "MAEV",
+      "image": "/images/w5/maev.webp",
+      "url": "https://www.meetmaev.com/"
+    }
+  ],
+  [
+    {
       "name": "ANATOLIK BELIKOV",
       "image": "/images/w4/anatolikbelikov.webp",
       "url": "https://anatolikbelikov.com/"

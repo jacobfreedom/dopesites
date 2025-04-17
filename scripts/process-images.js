@@ -8,6 +8,7 @@ const imageDirectories = [
   path.join(process.cwd(), 'public/images/w2'),
   path.join(process.cwd(), 'public/images/w3'),
   path.join(process.cwd(), 'public/images/w4'),
+  path.join(process.cwd(), 'public/images/w5'),
 ];
 
 // WebP conversion options
@@ -49,6 +50,15 @@ async function optimizeImage(imagePath) {
     const savings = ((originalSize - newSize) / originalSize * 100).toFixed(2);
     
     console.log(`Size reduction: ${savings}% (${(originalSize/1024).toFixed(2)}KB → ${(newSize/1024).toFixed(2)}KB)`);
+    
+    // Delete the original file after successful conversion
+    // Make sure the WebP file exists and has content before deleting the original
+    if (fs.existsSync(outputPath) && fs.statSync(outputPath).size > 0) {
+      fs.unlinkSync(imagePath);
+      console.log(`Deleted original file: ${imagePath}`);
+    } else {
+      console.warn(`WebP file verification failed, keeping original: ${imagePath}`);
+    }
     
     return outputPath;
   } catch (error) {
