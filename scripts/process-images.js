@@ -30,9 +30,13 @@ async function optimizeImage(imagePath) {
     const fileInfo = path.parse(imagePath);
     const outputPath = path.join(fileInfo.dir, `${fileInfo.name}.webp`);
     
-    // Skip if the WebP version already exists
+    // If WebP version exists, just delete the original and return the WebP path
     if (fs.existsSync(outputPath)) {
-      console.log(`WebP already exists, skipping: ${outputPath}`);
+      console.log(`WebP already exists at: ${outputPath}`);
+      if (fs.existsSync(imagePath) && fs.statSync(outputPath).size > 0) {
+        fs.unlinkSync(imagePath);
+        console.log(`Deleted original file: ${imagePath}`);
+      }
       return outputPath;
     }
     
