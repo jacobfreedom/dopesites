@@ -26,6 +26,10 @@
     justify-content: space-between;
     @media (max-width: 1090px) {
       flex-direction: column;
+      gap: $sp-y-7;
+    }
+    @media (max-width: 765px) {
+      gap: 0;
     }
   }
 
