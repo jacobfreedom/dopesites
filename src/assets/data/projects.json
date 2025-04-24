@@ -1,6 +1,63 @@
 [
   [
     {
+      "name": "REVERSED",
+      "image": "/images/w6/reversed.webp",
+      "url": "https://www.reversed.eco/"
+    },
+    {
+      "name": "DAILY DIALOGUE",
+      "image": "/images/w6/dailydialogue.webp",
+      "url": "https://www.dailydialogue.cc/"
+    },
+    {
+      "name": "CUP OF COUPLE",
+      "image": "/images/w6/cupofcouple.webp",
+      "url": "https://www.cupofcouple.com/"
+    },
+    {
+      "name": "CAVE",
+      "image": "/images/w6/CAVE.webp",
+      "url": "https://www.c-a-v-e.com/projects#slide-5"
+    },
+    {
+      "name": "GIGA",
+      "image": "/images/w6/giga.webp",
+      "url": "https://gigadesignstudio.com/"
+    },
+    {
+      "name": "EMERGENCE MAGAZINE",
+      "image": "/images/w6/emergencemagazi.webp",
+      "url": "https://emergencemagazine.org/"
+    },
+    {
+      "name": "SARAH BASSETT",
+      "image": "/images/w6/sarah-bassett.webp",
+      "url": "https://www.sarah-bassett.com/projects"
+    },
+    {
+      "name": "STRGL",
+      "image": "/images/w6/strgl.webp",
+      "url": "https://www.strgl.xyz/"
+    },
+    {
+      "name": "PUNCH RED",
+      "image": "/images/w6/punchred.webp",
+      "url": "https://punchred.xyz/"
+    },
+    {
+      "name": "JACOB LINDBLAD",
+      "image": "/images/w6/jacbo-linblad.webp",
+      "url": "https://jacoblindblad.dk/"
+    },
+    {
+      "name": "FREE ASSOCIATES",
+      "image": "/images/w6/freeassociates.webp",
+      "url": "https://www.free-associates.com/"
+    }
+  ],
+  [
+    {
       "name": "NO PLANS",
       "image": "/images/w5/noplans.webp",
       "url": "https://noplans.studio/"
@@ -74,7 +131,6 @@
       "image": "/images/w3/PP FRAGMENT.webp",
       "url": "https://pp-fragment.com/"
     },
-
     {
       "name": "YZA VOKU",
       "image": "/images/w3/YZA VOKU.webp",
@@ -195,6 +251,6 @@
       "name": "PHILIPP POLDER",
       "image": "/images/w0/philipppolder.webp",
       "url": "https://philipppolder.com/"
-    }  
+    }
   ]
 ]
