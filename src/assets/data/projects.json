@@ -1,6 +1,38 @@
 [
   [
     {
+      "name": "PRIME ASIA",
+      "image": "/images/w7/primeasia.webp",
+      "url": "https://www.primeasialeather.com/"
+    },
+    {
+      "name": "ANOTHER",
+      "image": "/images/w7/another.webp",
+      "url": "https://www.onlyanother.co/home"
+    },
+    {
+      "name": "SAVVY STUDIO",
+      "image": "/images/w7/savvy.webp",
+      "url": "https://savvy-studio.net/"
+    },
+    {
+      "name": "THE ROYAL STUDIO",
+      "image": "/images/w7/theroyalstudio.webp",
+      "url": "https://theroyalstudio.com/"
+    },
+    {
+      "name": "STUDIO OTTO",
+      "image": "/images/w7/studiootto.webp",
+      "url": "https://studio-otto.com/"
+    },
+    {
+      "name": "WA PRODUCTIONS",
+      "image": "/images/w7/waproductions.webp",
+      "url": "https://www.wa.productions/"
+    }
+  ],
+  [
+    {
       "name": "REVERSED",
       "image": "/images/w6/reversed.webp",
       "url": "https://www.reversed.eco/"
