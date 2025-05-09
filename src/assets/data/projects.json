@@ -1,6 +1,38 @@
 [
   [
     {
+      "name": "MARGINAL OFFICE",
+      "image": "/images/w8/marginal-office.webp",
+      "url": "https://www.marginaloffice.com/"
+    },
+    {
+      "name": "AKRON STREET",
+      "image": "/images/w8/akron-street.webp",
+      "url": "https://akronstreet.com/"
+    },
+    {
+      "name": "NAVARRA",
+      "image": "/images/w8/navara.webp",
+      "url": "https://navarra.is/en/work/"
+    },
+    {
+      "name": "VOCAL MOCKUPS",
+      "image": "/images/w8/vocal-mockups.webp",
+      "url": "https://vocalmockups.com/"
+    },
+    {
+      "name": "SIMMONDS LTD",
+      "image": "/images/w8/simmonsltd.webp",
+      "url": "https://www.simmondsltd.com/"
+    },
+    {
+      "name": "KARIMOKU RESEARCH",
+      "image": "/images/w8/karimoku-research.webp",
+      "url": "https://www.karimoku-research.com/"
+    }
+  ],
+  [
+    {
       "name": "PRIME ASIA",
       "image": "/images/w7/primeasia.webp",
       "url": "https://www.primeasialeather.com/"
