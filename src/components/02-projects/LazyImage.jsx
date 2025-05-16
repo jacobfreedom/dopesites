@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, memo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-const LazyImage = memo(function LazyImage({ src, alt, className, priority }) {
+function LazyImage({ src, alt, className, priority }) {
   const [placeholderError, setPlaceholderError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const imgRef = useRef(null);
@@ -10,7 +10,7 @@ const LazyImage = memo(function LazyImage({ src, alt, className, priority }) {
     return null;
   }
 
-  // Memoize the placeholder source to prevent recalculation on re-renders
+  // Get the placeholder source
   const placeholderSrc = src.replace(/\.(webp|png)$/, '-placeholder.webp');
 
   // Handle placeholder image error
@@ -22,6 +22,15 @@ const LazyImage = memo(function LazyImage({ src, alt, className, priority }) {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
+  
+  // Preload priority images immediately
+  useEffect(() => {
+    if (priority && src) {
+      // For priority images, trigger immediate loading
+      const img = new Image();
+      img.src = src;
+    }
+  }, [priority, src]);
 
   return (
     <div
@@ -51,6 +60,6 @@ const LazyImage = memo(function LazyImage({ src, alt, className, priority }) {
       />
     </div>
   );
-});
+}
 
 export default LazyImage;

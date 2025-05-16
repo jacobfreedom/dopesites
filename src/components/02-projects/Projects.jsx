@@ -1,10 +1,10 @@
-import React, { useMemo, memo } from 'react'
+import React, { useMemo } from 'react'
 import projects from '../../assets/data/projects.json'
 import LazyImage from './LazyImage'
 import { useWindowSize } from '../../hooks/useWindowSize'
 
-// Memoized project item to prevent unnecessary re-renders
-const ProjectItem = memo(({ project, priority }) => (
+// Project item component
+const ProjectItem = ({ project, priority }) => (
   <a
     href={project.url}
     target="_blank"
@@ -17,10 +17,10 @@ const ProjectItem = memo(({ project, priority }) => (
       priority={priority}
     />
   </a>
-));
+)
 
-// Memoized project wrapper to prevent unnecessary re-renders
-const ProjectWrapper = memo(({ project, projectIndex, priority }) => (
+// Project wrapper component
+const ProjectWrapper = ({ project, projectIndex, priority }) => (
   <div className="projects-wrapper">
     <div className="projects-label">
       <div className="projects-label-line" />
@@ -28,7 +28,7 @@ const ProjectWrapper = memo(({ project, projectIndex, priority }) => (
     </div>
     <ProjectItem project={project} priority={priority} />
   </div>
-));
+)
 
 function Projects() {
   const { width } = useWindowSize();
@@ -76,4 +76,4 @@ function Projects() {
   );
 }
 
-export default memo(Projects);
+export default Projects;
