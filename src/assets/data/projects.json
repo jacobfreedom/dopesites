@@ -1,6 +1,38 @@
 [
   [
     {
+      "name": "APA",
+      "image": "/images/w9/apa.webp",
+      "url": "https://pedroajo.com/"
+    },
+    {
+      "name": "ADMILK",
+      "image": "/images/w9/admilk.webp",
+      "url": "https://www.admilk.co/"
+    },
+    {
+      "name": "GESTE",
+      "image": "/images/w9/geste.webp",
+      "url": "https://geste.co/"
+    },
+    {
+      "name": "SCORPION ROSE",
+      "image": "/images/w9/scorpion-rose.webp",
+      "url": "https://scorpionrose.studio/"
+    },
+    {
+      "name": "BORNFIGHT STUDIO",
+      "image": "/images/w9/BFS.webp",
+      "url": "https://www.bornfight.studio/"
+    },
+    {
+      "name": "SQUAMARE RECORDINGS",
+      "image": "/images/w9/squamare-recordings.webp",
+      "url": "https://squamarecordings.com/"
+    }
+  ],
+  [
+    {
       "name": "MARGINAL OFFICE",
       "image": "/images/w8/marginal-office.webp",
       "url": "https://www.marginaloffice.com/"
