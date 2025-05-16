@@ -46,7 +46,8 @@ function Projects() {
     <>
       {projects.map((weekProjects, weekIndex) => {
         // Determine if this week's projects should be prioritized for loading
-        const isPriority = weekIndex === 0 || weekIndex === 1;
+        // Week 0 has highest priority, week 1 next, etc.
+        const isPriority = true; // All weeks get priority in sequential order
         
         return (
           <React.Fragment key={weekIndex}>
