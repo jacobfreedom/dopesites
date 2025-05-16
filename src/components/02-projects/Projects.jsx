@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import projects from '../../assets/data/projects.json'
 import LazyImage from './LazyImage'
 import { useWindowSize } from '../../hooks/useWindowSize'
@@ -32,6 +32,22 @@ const ProjectWrapper = ({ project, projectIndex, priority }) => (
 
 function Projects() {
   const { width } = useWindowSize();
+  const [loadedWeeks, setLoadedWeeks] = useState(new Set());
+  
+  // Track loaded weeks sequentially
+  useEffect(() => {
+    // Always load first week eagerly
+    if (loadedWeeks.size === 0) {
+      setLoadedWeeks(new Set([0]));
+      return;
+    }
+    
+    // Load next week after previous one is loaded
+    const maxLoadedWeek = Math.max(...Array.from(loadedWeeks));
+    if (maxLoadedWeek < projects.length - 1) {
+      setLoadedWeeks(prev => new Set([...prev, maxLoadedWeek + 1]));
+    }
+  }, [loadedWeeks]);
   
   // Memoize the intro text to prevent re-renders when width doesn't change
   const introLeft = useMemo(() => {
@@ -47,7 +63,8 @@ function Projects() {
       {projects.map((weekProjects, weekIndex) => {
         // Determine if this week's projects should be prioritized for loading
         // Week 0 has highest priority, week 1 next, etc.
-        const isPriority = true; // All weeks get priority in sequential order
+        const isPriority = !loadedWeeks.has(weekIndex) && 
+          (weekIndex === 0 || loadedWeeks.has(weekIndex - 1));
         
         return (
           <React.Fragment key={weekIndex}>
@@ -60,6 +77,7 @@ function Projects() {
             <div 
               className="projects" 
               style={{ paddingTop: weekIndex === 0 ? 'var(--sp-firstgrid)' : 'var(--sp-nextgrids)' }}
+              data-week-index={weekIndex}
             >
               {weekProjects.map((project, projectIndex) => (
                 <ProjectWrapper 
