@@ -235,17 +235,11 @@
     transform: scale(1.05);
     z-index: 1;
     opacity: 1;
-    transition: opacity 0.3s ease-out;
   }
 
   &-main {
     z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-    
-    &.loaded {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
 
