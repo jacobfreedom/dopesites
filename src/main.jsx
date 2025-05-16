@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import './index.scss'
 import App from './App.jsx'
 import { Analytics } from '@vercel/analytics/react'
-import React, { useEffect, useState, useCallback, useRef, StrictMode } from 'react'
+import React, { useEffect, useState, useCallback, useRef, StrictMode, useMemo } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 
@@ -15,69 +15,76 @@ function Main() {
     if (node) setAppElement(node);
   }, []);
 
+  // Optimized debounce function with proper cleanup
   const debounce = useCallback((func, wait) => {
     let timeout;
-    return (...args) => {
+    const debouncedFn = (...args) => {
       clearTimeout(timeout);
       timeout = setTimeout(() => func(...args), wait);
     };
+    
+    debouncedFn.cancel = () => {
+      clearTimeout(timeout);
+    };
+    
+    return debouncedFn;
   }, []);
 
+  // Optimized page calculation with throttling to avoid excessive calculations
   const calculatePages = useCallback(() => {
     if (appElement) {
       const appHeight = appElement.scrollHeight;
       const viewportHeight = window.innerHeight;
       const calculatedPages = appHeight / viewportHeight;
-      console.log('Calculating pages:', {
-        appHeight,
-        viewportHeight,
-        calculatedPages,
-        scrollTop: appElement.scrollTop,
-        clientHeight: appElement.clientHeight
-      });
-      setPages(calculatedPages);
+      
+      // Only update state if the value has changed significantly
+      if (Math.abs(calculatedPages - pages) > 0.01) {
+        setPages(calculatedPages);
+      }
     }
-  }, [appElement]);
+  }, [appElement, pages]);
 
 
+
+  // Memoize the debounced calculate function to prevent recreation
+  const debouncedCalculate = useMemo(() => debounce(calculatePages, 200), [calculatePages]);
 
   useEffect(() => {
     if (!appElement) return;
 
-    const debouncedCalculate = debounce(calculatePages, 100);
     const resizeObserver = new ResizeObserver(debouncedCalculate);
-
     resizeObserver.observe(appElement);
     calculatePages();
 
     return () => {
+      debouncedCalculate.cancel();
       resizeObserver.unobserve(appElement);
       resizeObserver.disconnect();
     };
-  }, [calculatePages, appElement]);
+  }, [calculatePages, appElement, debouncedCalculate]);
 
 
 
-  useEffect(() => {
-    if (appElement) {
-      calculatePages();
-    }
-  }, [calculatePages, appElement]);
+  // This effect is redundant as we already calculate pages in the ResizeObserver effect
 
   useEffect(() => {
-    calculatePages();
-
+    // Store initial scroll position
     scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
 
+    // Optimized scroll handler with passive event listener
     const handleScroll = () => {
       if (!hasScrolledRef.current) {
         hasScrolledRef.current = true;
         return;
       }
-
-      scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
+      
+      // Use requestAnimationFrame to optimize scroll performance
+      requestAnimationFrame(() => {
+        scrollPositionRef.current = window.scrollY || document.documentElement.scrollTop;
+      });
     };
 
+    // Handle visibility change (tab switching)
     const handleVisibilityChange = () => {
       if (!document.hidden && scrollPositionRef.current !== null) {
         hasScrolledRef.current = false;
@@ -87,27 +94,33 @@ function Main() {
       }
     };
 
-    const stableCalculate = calculatePages;
-
+    // Use the memoized debounced function for resize events
     window.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('resize', stableCalculate, { passive: true });
-    window.addEventListener('orientationchange', stableCalculate);
+    window.addEventListener('resize', debouncedCalculate, { passive: true });
+    window.addEventListener('orientationchange', debouncedCalculate);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('resize', stableCalculate);
-      window.removeEventListener('orientationchange', stableCalculate);
+      window.removeEventListener('resize', debouncedCalculate);
+      window.removeEventListener('orientationchange', debouncedCalculate);
     };
-  }, [calculatePages]);
+  }, [debouncedCalculate]);
 
   return (
     <>
       <StrictMode>
         <Canvas
-          dpr={[1, 1]}
-          gl={{ alpha: false, antialias: false, stencil: false, depth: false }}
+          dpr={[1, 1.5]}
+          gl={{ 
+            alpha: false, 
+            antialias: false, 
+            stencil: false, 
+            depth: false,
+            powerPreference: 'high-performance'
+          }}
+          performance={{ min: 0.5 }}
         >
           <ScrollControls pages={pages} damping={0.2} distance={2.1}>
             <Scroll html>
