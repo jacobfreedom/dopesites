@@ -112,17 +112,20 @@ function Main() {
     <>
       <StrictMode>
         <Canvas
-          dpr={[1, 1.5]}
+          dpr={[1, 2]}
           gl={{ 
-            alpha: false, 
-            antialias: false, 
-            stencil: false, 
-            depth: false,
-            powerPreference: 'high-performance'
+            alpha: true,
+            antialias: true,
+            stencil: false,
+            depth: true,
+            powerPreference: 'high-performance',
+            preserveDrawingBuffer: true
           }}
           performance={{ min: 0.5 }}
+          camera={{ position: [0, 0, 5], fov: 75 }}
+          style={{ position: 'fixed' }}
         >
-          <ScrollControls pages={pages} damping={0.2} distance={2.1}>
+          <ScrollControls pages={pages} damping={0.15} distance={3.5}>
             <Scroll html>
               <App ref={appRef} />
             </Scroll>
